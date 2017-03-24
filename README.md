@@ -1,2 +1,2 @@
-# portfolio
+# Portfolio
 Simple portfolio website.
