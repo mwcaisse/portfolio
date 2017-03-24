@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "name": "mwcaisse-portfolio",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "gulp": "3.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "4.7.0"
+  },
+  "scripts": {
+    "postinstall": "gulp restore"
+  },
+  "repository": {}
+}
