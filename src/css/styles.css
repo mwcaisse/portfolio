@@ -23,6 +23,9 @@
     background-color: #292b2c;
     color: rgba(255, 255, 255, .5);
 }
+.skills-header {
+    padding-bottom: 15px;
+}
 
 .skills-list h4 {
     text-align: center;
