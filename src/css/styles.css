@@ -23,3 +23,17 @@
     background-color: #292b2c;
     color: rgba(255, 255, 255, .5);
 }
+
+.skills-list h4 {
+    text-align: center;
+}
+
+.skills-list ul {
+    text-align: center;
+    padding-left: 0;
+}
+
+.skills-list li {
+    list-style-type: none;
+}
+
