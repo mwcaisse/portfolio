@@ -1,0 +1,18 @@
+.header {
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.about {
+    background-image: url('../img/background.png');
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.about .about-content {
+
+}
