@@ -31,3 +31,49 @@ gulp.task('restore', [
     'restore:bootstrap',
     'restore:font-awesome'
 ]);
+
+var dist = './dist/';
+
+gulp.task('dist:css',
+    function() {
+        gulp.src([
+            "src/css/**/*.css"
+        ]).pipe(gulp.dest(dist + "/css"));
+    });
+
+gulp.task('dist:js',
+    function () {
+        gulp.src([
+            "src/js/**/*.js"
+        ]).pipe(gulp.dest(dist + "/js"));
+    });
+
+gulp.task('dist:img',
+    function () {
+        gulp.src([
+            "src/img/**/*.jpg",
+            "src/img/**/*.png"
+        ]).pipe(gulp.dest(dist + "/img"));
+    });
+
+gulp.task('dist:html',
+    function () {
+        gulp.src([
+            "src/**/*.html"
+        ]).pipe(gulp.dest(dist + "/"));
+    });
+
+gulp.task('dist:lib',
+    function () {
+        gulp.src([
+            "src/lib/**/*.*"
+        ]).pipe(gulp.dest(dist + "/lib"));
+    });
+
+gulp.task('dist', [
+    'dist:css',
+    'dist:js',
+    'dist:img',
+    'dist:html',
+    'dist:lib'
+]);
