@@ -13,6 +13,12 @@
     background-size: cover;
 }
 
-.about .about-content {
+#footer-right li{
+    display: inline-block;
+}
 
+.footer {
+    padding: 30px;
+    width: 100%;
+    background-color: #f5f5f5;
 }
