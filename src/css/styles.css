@@ -50,10 +50,39 @@
     background-color: #292b2c;
     color: rgba(255, 255, 255, .5);
     border: 1px solid rgba(255, 255, 255, .125);
-    margin: 15px 0px;
 }
 
 #experience {
     padding-top: 30px;
 }
 
+.experience-card {
+    /*margin-left: 300px;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.timeline-icon {
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 999;
+    position: relative;
+    background: rgba(255, 255, 255, .5);
+    float: right;
+}
+
+    .timeline-icon .fa {
+        margin-left: 16px;
+        margin-top: 8px;
+    }
+
+.timeline-text {
+    text-align: right;
+    vertical-align: middle;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 15px;
+    float: right;
+}
