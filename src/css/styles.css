@@ -12,6 +12,8 @@
     max-height: 1080px;
     overflow: hidden;
     background-size: cover;
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
 .name h1 {
@@ -36,26 +38,24 @@
 }
 
 .btn-resume {
-    border-width: 3px !important;
-    border-color: rgba(255, 255, 255, .5) !important;
-    color: inherit !important;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, .5);
+    color: inherit;
 }
 
     .btn-resume:hover {
-        background: rgba(255, 255, 255, 1) !important;
+        background: rgba(255, 255, 255, 1);
+        border-color: rgba(255, 255, 255, 1);
+        color: inherit;
     }
 
-#footer-right li{
-    display: inline-block;
+.about {
+    padding-top: 30px;
+    padding-bottom: 15px;
 }
 
-.footer {
-    padding: 30px;
-    width: 100%;
-    background-color: #292b2c;
-    color: rgba(255, 255, 255, .5);
-}
 .skills-header {
+    padding-top: 30px;
     padding-bottom: 15px;
 }
 
@@ -75,7 +75,6 @@
 .black-container {
     background-color: #292b2c;
     color: rgba(255, 255, 255, .5);
-    padding-bottom: 1px;
 }
 
 .black-container .card {
@@ -117,4 +116,15 @@
     line-height: 50px;
     margin-right: 15px;
     float: right;
+}
+
+#footer-right li {
+    display: inline-block;
+}
+
+.footer {
+    padding: 30px;
+    width: 100%;
+    background-color: #292b2c;
+    color: rgba(255, 255, 255, .5);
 }
