@@ -49,6 +49,10 @@
         color: inherit;
     }
 
+    .btn-resume:visited {
+        color: inherit;
+    }
+
 .about {
     padding-top: 30px;
     padding-bottom: 15px;
