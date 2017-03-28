@@ -100,6 +100,10 @@
     padding-bottom: 30px;
 }
 
+    #experience .row {
+        padding-bottom: 15px;
+    }
+
 .experience-card {
     /*margin-left: 300px;*/
     margin-top: 5px;
@@ -151,13 +155,14 @@
     .timeline-text.double {
         line-height: 25px;
     }
+   
 
 #projects {
     padding-top: 30px;
     padding-bottom: 15px;
 }
 
-.project-row {
+#projects .row {
     padding-top: 15px;
     padding-bottom: 15px;
 }
