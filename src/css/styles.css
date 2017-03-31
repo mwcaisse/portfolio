@@ -218,3 +218,27 @@
             color: rgba(255, 255, 255, .75);
         }
 
+
+
+/** Projects Page */
+.project-name {
+    text-align: center;
+}
+
+.project-description {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.project-description h3 {
+    text-align: center;
+}
+
+.project-approach {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.project-approach h3 {
+    text-align: center;
+}
