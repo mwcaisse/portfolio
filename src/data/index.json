@@ -1,0 +1,124 @@
+﻿{
+
+  "companies": [
+    {
+      "name": "Raytheon Company",
+      "title": "Software Developer",
+      "dates": [
+        {
+          "start": "May 2015",
+          "end": "Present"
+        }
+      ],
+      "points": [
+        "Led the development of an enterprise application to improve import/export compliance. Played a key role in gathering requirements from customer and desgining solutions to meet the requirements. Faciliated the daily scrums.",
+        "Contributed to process improvement efforts, including automating our build process and downselecting static code analysis tools.",
+        "Developed a proof of concept application for indoor navigation using iBeans and Apache Cordova."
+      ],
+      "skills": [
+        "C#",
+        "Java",
+        "JavaScript",
+        "HTML5",
+        "CSS",
+        "Bootstrap",
+        "Knockout",
+        "jQuery",
+        "SQLServer",
+        "SQL",
+        "Oracle",
+        "Jenkins",
+        "SSRS",
+        "SVN",
+        "TFS",
+        "Agile",
+        "Apache Cordova",
+        "Apache Solr",
+        "Spring"
+      ]
+    },
+    {
+      "name": "NVIDIA",
+      "title": "Mobile Intern",
+      "dates": [
+        {
+          "start": "March 2015",
+          "end": "May 2015"
+        }
+      ],
+      "points": [
+        "Worked with the Linux 4 Tegra team to port different versions of Linux to the Jetson TK1 development board. Created documentation of the process."
+      ],
+      "skills": [
+        "Linux",
+        "Shell Scripting"
+      ]
+    },
+    {
+      "name": "Raytheon Company",
+      "title": "Software Developer, Intern",
+      "dates": [
+        {
+          "start": "May 2015",
+          "end": "Present"
+        }
+      ],
+      "points": [
+        "Implemented a web-based application designed to increase safety and compliance on the manufacturing floor through the user of a daily survey."
+      ],
+      "skills": [
+        "C#",
+        "Knokcout",
+        "JavaScript",
+        "HTML5",
+        "CSS",
+        "jQuery",
+        "SSRS",
+        "SQLServer",
+        "TFS"
+      ]
+    },
+    {
+      "name": "Fidelity Investments",
+      "title": "Software Developer, Intern",
+      "dates": [
+        {
+          "start": "May 2013",
+          "end": "August 2013"
+        },
+        {
+          "start": "May 2012",
+          "end": "August 2012"
+        }
+      ],
+      "points": [
+        "Automated the deployments of muliple projects by creating an application that is easily configurable to specify deployment targets and methods",
+        "Mentored a fellow intern through the creation on a web based application and backend service to manage finacial information."
+      ],
+      "skills": [
+        "Java",
+        "Oracle",
+        "JavaScript",
+        "jQuery",
+        "HTML",
+        "CSS",
+        "JMS",
+        "Apache Camel"
+      ]
+    },
+    {
+      "name": "Worcester Polytechnic Institute",
+      "title": "Helpdesk Specialist",
+      "dates": [
+        {
+          "start": "Sept 2012",
+          "end": "May 2014"
+        }
+      ],
+      "points": [
+        "Provided email, phone, and in person support for IT related issues for WPI students, faculty, and staff."
+      ],
+      "skills": []
+    }
+  ] 
+}

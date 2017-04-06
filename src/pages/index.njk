@@ -82,117 +82,56 @@
 </div>
 
 <!-- End of Technical Skills Div-->
+
 <!-- Start of Experience Div-->
 <div id="experience" class="black-container">
     <div class="container">
         <h3>Experience</h3>
-        <div class="row">
-            <div class="col-3 align-self-center">
-                <div class="timeline-icon left">
-                    <i class="fa fa-map-marker fa-2x"></i>
-                </div>
-                <div class="timeline-text left">May 2015 - Present</div>
-            </div>
-            <div class="col-9">
-                <div class="card experience-card">
-                    <div class="card-block">
-                        <h4 class="card-title">Raytheon Company</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-                        <p>Led the development of an enterprise application to improve import/export compliance. Played a key role in gathering requirements from customer and desgining solutions to meet the requirements. Faciliated the daily scrums.</p>
-                        <p>Contributed to process improvement efforts, including automating our build process and downselecting static code analysis tools.</p>
-                        <p>Developed a proof of concept application for indoor navigation using iBeans and Apache Cordova.</p>
-                        <p>
-                            <b>Related Skills:</b> C#, Java, JavaScript, HTML5, CSS, Bootstrap, Knockout, jQuery, SQLServer, SQL, Oracle, Jenkins, SSRS, SVN, TFS, Agile, Apache Cordova, Apache Solr, Spring
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% for company in companies %}
 
-        <div class="row">
-            <div class="col-9">
-                <div class="card experience-card">
-                    <div class="card-block">
-                        <h4 class="card-title">NVIDIA</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Mobile Intern</h6>
-                        <p>Worked with the Linux 4 Tegra team to port different versions of Linux to the Jetson TK1 development board. Created documentation of the process.</p>
-                        <p>
-                            <b>Related Skills:</b> Linux, Shell Scripting
-                        </p>
+            <div class="row">
+                <div class="col-3 align-self-center">
+                    <div class="timeline-icon left">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                    </div>
+                    <div class="timeline-text left {% if company.dates.length === 2 %}double{% endif %}">
+                        {% for date in company.dates %}
+                         {{date.start}} - {{date.end}} {% if loop.index !== 0 %} <br /> {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
-            <div class="col-3 align-self-center">
-                <div class="timeline-icon right">
-                    <i class="fa fa-map-marker fa-2x"></i>
-                </div>
-                <div class="timeline-text right">March 2015 - May 2015</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 align-self-center">
-                <div class="timeline-icon left">
-                    <i class="fa fa-map-marker fa-2x"></i>
-                </div>
-                <div class="timeline-text left">May 2014 - March 2015</div>
-            </div>
-            <div class="col-9">
-                <div class="card experience-card">
-                    <div class="card-block">
-                        <h4 class="card-title">Raytheon Company</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Software Developer, Intern</h6>
-                        <p>Implemented a web-based application designed to increase safety and compliance on the manufacturing floor through the user of a daily survey.</p>
-                        <p>
-                            <b>Related Skills:</b> C#, Knockout, JavaScript, HTML, CSS, jQuery, SSRS, SQLServer, TFS
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-9">
-                <div class="card experience-card">
-                    <div class="card-block">
-                        <h4 class="card-title">Fidelity Investments</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Software Developer, Intern</h6>
-                        <p>Automated the deployments of muliple projects by creating an application that is easily configurable to specify deployment targets and methods</p>
-                        <p>Mentoed a fellow intern through the creation on a web based application and backend service to manage finacial information.</p>
-                        <p>
-                            <b>Related Skills:</b> Java, Oracle, JavaScript, jQuery, HTML, CSS, JMS, Apache Camel
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 align-self-center">
-                <div class="timeline-icon right">
-                    <i class="fa fa-map-marker fa-2x"></i>
-                </div>
-                <div class="timeline-text right double">May 2013 - August 2013 <br /> May 2012 - August 2012</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3 align-self-center">
-                <div class="timeline-icon left">
-                    <i class="fa fa-map-marker fa-2x"></i>
-                </div>
-                <div class="timeline-text left">Sept 2012 - May 2014</div>
-            </div>
-            <div class="col-9">
-                <div class="card experience-card">
-                    <div class="card-block">
-                        <h4 class="card-title">Worcester Polytechnic Institute</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Helpdesk Specialist</h6>
-                        <p>Provided email, phone, and in person support for IT related issues for WPI students, faculty, and staff.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <div class="col-9">
+                    <div class="card experience-card">
+                        <div class="card-block">
+                            <h4 class="card-title">{{company.name}}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{company.title}}</h6>
 
+                            {% for point in company.points %}
+                                <p>{{point}}</p>
+                            {% endfor %}
+
+                            {% if company.skills.length > 0 %}
+                            <p>
+                                <b>Related Skills:</b> 
+                                {% for skill in company.skills %}
+                                {{skill}}{% if company.skills.length !== loop.index %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </div>
 
 <!-- End of Experience Div-->
+
+
+
 <!-- Start of Projects Div-->
+
 <div id="projects" class="container">
     <h3>Projects</h3>
     <p>Here be where I will put some details about various projects.</p>

@@ -6,6 +6,7 @@ Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 var gulp = require('gulp');
 var nunjucksRender = require("gulp-nunjucks-render");
 var gulpClean = require("gulp-clean");
+var gulpData = require("gulp-data");
 
 var libs = './src/lib/';
 
@@ -36,6 +37,9 @@ gulp.task('restore', [
 
 gulp.task('nunjucks', function() {
     gulp.src("src/pages/**/*.+(html|njk)")
+        .pipe(gulpData(function() {
+            return require("./src/data/index.json");
+        }))
         .pipe(nunjucksRender({
             path: ["src/templates"]
         }))

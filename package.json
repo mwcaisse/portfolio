@@ -6,7 +6,8 @@
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-nunjucks-render": "2.0.0",
-    "gulp-clean" : "0.3.2" 
+    "gulp-clean": "0.3.2",
+    "gulp-data" : "1.2.1"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
