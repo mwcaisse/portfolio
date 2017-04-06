@@ -96,7 +96,7 @@
                     </div>
                     <div class="timeline-text left {% if company.dates.length === 2 %}double{% endif %}">
                         {% for date in company.dates %}
-                         {{date.start}} - {{date.end}} {% if loop.index !== 0 %} <br /> {% endif %}
+                         {{date.start}} - {{date.end}} {% if not loop.last %} <br /> {% endif %}
                         {% endfor %}
                     </div>
                 </div>
@@ -112,10 +112,7 @@
 
                             {% if company.skills.length > 0 %}
                             <p>
-                                <b>Related Skills:</b> 
-                                {% for skill in company.skills %}
-                                {{skill}}{% if company.skills.length !== loop.index %}, {% endif %}
-                                {% endfor %}
+                                <b>Related Skills:</b> {{ company.skills | join(", ") }}                            
                             </p>
                             {% endif %}
                         </div>

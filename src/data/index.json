@@ -120,5 +120,32 @@
       ],
       "skills": []
     }
+  ],
+  "projects": [
+    {
+      "name": "CarTracker",
+      "description": "Web + Android Application",
+      "thumbnail": "img/project_thumbs/cartracker.jpg"
+    },
+    {
+      "name": "ShowReminder",
+      "description": "Web Application",
+      "thumbnail": "img/project_thumbs/showreminder.jpg"
+    },
+    {
+      "name": "MirrorMirror",
+      "description": "Web Application",
+      "thumbnail": "img/project_thumbs/mirrormirror.jpg"
+    },
+    {
+      "name": "mwcaisse.com",
+      "description": "Web Design",
+      "thumbnail": "img/project_thumbs/mwcaisse.jpg"
+    },
+    {
+      "name": "PushFile",
+      "description": "Web + Android Application",
+      "thumbnail": "img/project_thumbs/pushfile.jpg"
+    }
   ] 
 }
