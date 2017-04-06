@@ -4,6 +4,7 @@ Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 */
 
 var gulp = require('gulp');
+var nunjucksRender = require("gulp-nunjucks-render");
 
 var libs = './src/lib/';
 
@@ -31,6 +32,14 @@ gulp.task('restore', [
     'restore:bootstrap',
     'restore:font-awesome'
 ]);
+
+gulp.task('nunjucks', function() {
+    gulp.src("src/pages/**/*.+(html|njk)")
+        .pipe(nunjucksRender({
+            path: ["src/templates"]
+        }))
+        .pipe(gulp.dest(dist + "/"));
+});
 
 var dist = './dist/';
 
@@ -74,6 +83,6 @@ gulp.task('dist', [
     'dist:css',
     'dist:js',
     'dist:img',
-    'dist:html',
+    //'dist:html',
     'dist:lib'
 ]);
