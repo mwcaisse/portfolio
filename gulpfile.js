@@ -5,6 +5,7 @@ Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 
 var gulp = require('gulp');
 var nunjucksRender = require("gulp-nunjucks-render");
+var gulpClean = require("gulp-clean");
 
 var libs = './src/lib/';
 
@@ -42,6 +43,11 @@ gulp.task('nunjucks', function() {
 });
 
 var dist = './dist/';
+
+gulp.task("dist:clean",
+    function() {
+        gulp.src(dist, { read: false }).pipe(gulpClean());
+    });
 
 gulp.task('dist:css',
     function() {
@@ -85,4 +91,8 @@ gulp.task('dist', [
     'dist:img',
     'nunjucks',
     'dist:lib'
+]);
+
+gulp.task("clean", [
+    "dist:clean"
 ]);
