@@ -83,6 +83,6 @@ gulp.task('dist', [
     'dist:css',
     'dist:js',
     'dist:img',
-    //'dist:html',
+    'nunjucks',
     'dist:lib'
 ]);
