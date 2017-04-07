@@ -7,8 +7,12 @@ var gulp = require('gulp');
 var nunjucksRender = require("gulp-nunjucks-render");
 var gulpClean = require("gulp-clean");
 var gulpData = require("gulp-data");
+var gulpRename = require("gulp-rename");
 
 var libs = './src/lib/';
+var dist = './dist/';
+var stage = "./dist-stage/";
+var nunjucksStage = stage + "/nunjucks/";
 
 gulp.task('default', function () {
     // place code for your default task here
@@ -35,18 +39,68 @@ gulp.task('restore', [
     'restore:font-awesome'
 ]);
 
-gulp.task('nunjucks', function() {
-    gulp.src("src/pages/**/*.+(html|njk)")
-        .pipe(gulpData(function() {
-            return require("./src/data/index.json");
-        }))
+function getDataForFile(file) {
+    var fileName = file.relative;
+    console.log("File: " + fileName);
+    if (fileName === "index.njk") {
+        return require("./src/data/index.json");
+    } else if (fileName === "cartracker.njk") {
+        return require("./src/data/projects/cartracker.json");
+    } else {
+        return {};
+    }
+}
+
+gulp.task('nunjucks', [
+    "nunjucks:stage",
+    "nunjucks:render"
+]);
+
+gulp.task('nunjucks:render', function () {
+    console.log("nunjucks render");
+    gulp.src(nunjucksStage + "/**/*.+(html|njk)")
+        .pipe(gulpData(getDataForFile))
         .pipe(nunjucksRender({
             path: ["src/templates"]
         }))
         .pipe(gulp.dest(dist + "/"));
 });
 
-var dist = './dist/';
+gulp.task("nunjucks:stage", [
+    "nunjucks:stage:other",
+    "nunjucks:stage:projects"
+]);
+
+gulp.task("nunjucks:stage:other", function() {
+    gulp.src(["src/pages/**/*.+(html|njk)", "!src/pages/project.njk"])
+        .pipe(gulp.dest(nunjucksStage)); 
+});
+
+gulp.task("nunjucks:stage:projects", function() {
+    var projects = [
+        "cartracker",
+        "showreminder",
+        "mirrormirror",
+        "mwcaisse",
+        "pushfile"
+    ];
+
+    for (var i = 0; i < projects.length; i++) {
+        var project = projects[i];
+
+        gulp.src("src/pages/project.njk")
+            .pipe(gulpRename({
+                dirname: "projects/",
+                basename: project,
+                extname: ".njk"
+            }))
+            .pipe(gulp.dest(nunjucksStage));
+    }
+});
+
+gulp.task("stage:clean", function() {
+    gulp.src(stage, { read: false }).pipe(gulpClean());
+});
 
 gulp.task("dist:clean",
     function() {
@@ -94,9 +148,11 @@ gulp.task('dist', [
     'dist:js',
     'dist:img',
     'nunjucks',
-    'dist:lib'
+    'dist:lib'//,
+    //'stage:clean'
 ]);
 
 gulp.task("clean", [
-    "dist:clean"
+    "dist:clean",
+    "stage:clean"
 ]);

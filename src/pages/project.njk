@@ -1,19 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿{% extends "layout.njk" %}
 
-<head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" context="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-
-    <title>Mitchell Caisse - Software Engineer</title>
-</head>
-
-<body>
+{% block content %}
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
         <ul class="nav nav-pills float-right">
@@ -37,39 +24,40 @@
 
     <div class="jumbotron">
         <div class="project-name">
-            <h1>Car Tracker</h1>
-            <h2>Web + Android Application</h2>
+            <h1>{{ name }}</h1>
+            <h2>{{ type }}</h2>
         </div>
     </div>
-    
+
     <div>
         <div class="row">
             <div class="col project-description">
                 <h3>About the Project</h3>
                 <p>Car Tracker is an Android application and web application to track vehicle and trip information. Similar to Strava and MapMyRun, except for your car. The Android application connects to your cars daignostic system using a bluetooth ODBII reader. Once connected it gathers various statistics, (speed, engine speed, oil temperature, air temperate, etc) and records them along with your current GPS position through out your trip. Once the trip is over they are uploaded to a server and available for viewing. Future plans are to update the server to provide more performance and maintance information. Such as how fuel efficient your car is and when its due for its next maintenance.</p>
-                
+
                 <h4>Related Skills</h4>
                 <p>Java, Andriod SDK, HTML, Javascript, KnockoutJS, RequireJS, mybatis, MariaDB, SQL, Spring Framework, Jenkins</p>
             </div>
             <div class="col project-approach">
                 <h3>Project Approach</h3>
-                <p>The project is divided into two applications.
+                <p>
+                    The project is divided into two applications.
                     The Android Application which is responsible for collecting the information from the car and uploading it.
                     The Web Application which collects the information from the Android app performs analysis and presents it to the user in an easy to read and understand format.
                 </p>
-                
+
                 <p>To keep things simple and allow easy code re-use between the Android application and Web app both were written in Java.</p>
-                
+
                 <p>The webapplication utilizes Spring Framework for hanlding dependency injection, the RESTFul API, serving WebPages using Thymeleaf as a templating engine, and to secure the application. MyBatis was used to provide a simple Data Access Layer between the application and its database.</p>
                 <p>On the android side <a href="https://github.com/pires/obd-java-api" target="_blank">piers odb-java-api</a> is used to communicate with the vehicle. Spring RestTemplate is used to consume the RESTFul api exposed by the web application.</p>
-                
+
                 <p>The source code for the application can be found <a href="https://github.com/mwcaisse/CarTracker" target="_blank">here</a>.</p>
             </div>
-            
+
 
         </div>
     </div>
-    
+
     <div class="project-images">
         <div class="row">
             <img src="img/projects/cartracker/cartracker_1.png" />
@@ -81,22 +69,4 @@
             <img src="img/projects/cartracker/cartracker_3.png" />
         </div>
     </div>
-
-    <footer class="footer">
-        <span>&copy; Mitchell Caisse</span>
-
-        <div id="footer-right" class="pull-right">
-            <ul>
-                <li>
-                    <a href="https://github.com/mwcaisse" target="_blank">
-                        <i class="fa fa-github fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+{% endblock %}
