@@ -9,9 +9,8 @@
     "gulp-clean": "0.3.2",
     "gulp-data": "1.2.1",
     "gulp-rename": "1.2.2",
-    "babel-core": "6.24.0",
-    "babel-preset-env":  "1.3.2" 
-  },
+    "merge-stream":  "1.0.1" 
+ },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "4.7.0"

@@ -8,6 +8,7 @@ var nunjucksRender = require("gulp-nunjucks-render");
 var gulpClean = require("gulp-clean");
 var gulpData = require("gulp-data");
 var gulpRename = require("gulp-rename");
+var merge = require("merge-stream");
 
 var libs = './src/lib/';
 var dist = './dist/';
@@ -19,19 +20,22 @@ gulp.task('default', function () {
 });
 
 gulp.task('restore:bootstrap', function () {
-    gulp.src([
+    return gulp.src([
         'node_modules/bootstrap/dist/**/*.*'
     ]).pipe(gulp.dest(libs + 'bootstrap'));
 });
 
 gulp.task('restore:font-awesome', function () {
-    gulp.src([
+    var css = gulp.src([
         'node_modules/font-awesome/css/*.*'
     ]).pipe(gulp.dest(libs + 'font-awesome/css'));
 
-    gulp.src([
+    var other = gulp.src([
         'node_modules/font-awesome/fonts/*.*'
     ]).pipe(gulp.dest(libs + 'font-awesome/fonts'));
+
+    return merge(css, other);
+
 });
 
 gulp.task('restore', [
@@ -57,8 +61,7 @@ gulp.task('nunjucks', [
 ]);
 
 gulp.task('nunjucks:render', function () {
-    console.log("nunjucks render");
-    gulp.src(nunjucksStage + "/**/*.+(html|njk)")
+    return gulp.src(nunjucksStage + "/**/*.+(html|njk)")
         .pipe(gulpData(getDataForFile))
         .pipe(nunjucksRender({
             path: ["src/templates"]
@@ -72,7 +75,7 @@ gulp.task("nunjucks:stage", [
 ]);
 
 gulp.task("nunjucks:stage:other", function() {
-    gulp.src(["src/pages/**/*.+(html|njk)", "!src/pages/project.njk"])
+    return gulp.src(["src/pages/**/*.+(html|njk)", "!src/pages/project.njk"])
         .pipe(gulp.dest(nunjucksStage)); 
 });
 
@@ -85,45 +88,48 @@ gulp.task("nunjucks:stage:projects", function() {
         "pushfile"
     ];
 
+    var streams = merge();
+
     for (var i = 0; i < projects.length; i++) {
         var project = projects[i];
 
-        gulp.src("src/pages/project.njk")
+        streams.add(gulp.src("src/pages/project.njk")
             .pipe(gulpRename({
                 dirname: "projects/",
                 basename: project,
                 extname: ".njk"
             }))
-            .pipe(gulp.dest(nunjucksStage));
+            .pipe(gulp.dest(nunjucksStage)));
     }
+    return streams;
 });
 
 gulp.task("stage:clean", function() {
-    gulp.src(stage, { read: false }).pipe(gulpClean());
+    return gulp.src(stage, { read: false }).pipe(gulpClean());
 });
 
 gulp.task("dist:clean",
     function() {
-        gulp.src(dist, { read: false }).pipe(gulpClean());
+        return gulp.src(dist, { read: false }).pipe(gulpClean());
     });
 
 gulp.task('dist:css',
     function() {
-        gulp.src([
+        return gulp.src([
             "src/css/**/*.css"
         ]).pipe(gulp.dest(dist + "/css"));
     });
 
 gulp.task('dist:js',
     function () {
-        gulp.src([
+        return gulp.src([
             "src/js/**/*.js"
         ]).pipe(gulp.dest(dist + "/js"));
     });
 
 gulp.task('dist:img',
     function () {
-        gulp.src([
+        return gulp.src([
             "src/img/**/*.jpg",
             "src/img/**/*.png"
         ]).pipe(gulp.dest(dist + "/img"));
@@ -131,14 +137,14 @@ gulp.task('dist:img',
 
 gulp.task('dist:html',
     function () {
-        gulp.src([
+        return gulp.src([
             "src/**/*.html"
         ]).pipe(gulp.dest(dist + "/"));
     });
 
 gulp.task('dist:lib',
     function () {
-        gulp.src([
+        return gulp.src([
             "src/lib/**/*.*"
         ]).pipe(gulp.dest(dist + "/lib"));
     });
