@@ -1,4 +1,5 @@
-﻿/*
+﻿/// <binding BeforeBuild='dist' Clean='clean' />
+/*
 This file is the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 */
@@ -45,6 +46,7 @@ gulp.task('restore', [
 
 function getDataForFile(file) {
     var fileName = file.relative;
+    console.log("file: " + file.relative);
     if (fileName === "index.njk") {
         return require("./src/data/index.json");
     } else if (fileName === "projects\\cartracker.njk") {
