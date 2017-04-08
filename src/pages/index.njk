@@ -153,83 +153,43 @@
     <h3>Projects</h3>
     <p>Here be where I will put some details about various projects.</p>
 
-    <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="img/project_thumbs/cartracker.jpg" />
-            </div>
-            <a href="project.html">
-                <div class="project-info">
-                    <span class="project-text">
-                        <h3>CarTracker</h3>
-                        <h5>Web + Android Application</h5>
-                    </span>
-                </div>
-            </a>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="img/project_thumbs/showreminder.jpg" />
-            </div>
-            <a href="project.html">
-                <div class="project-info">
-                    <span class="project-text">
-                        <h3>ShowReminder</h3>
-                        <h5>Web Application</h5>
-                    </span>
-                </div>
-            </a>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="img/project_thumbs/mirrormirror.jpg">
-            </div>
-            <a href="project.html">
-                <div class="project-info">
-                    <span class="project-text">
-                        <h3>MirrorMirror</h3>
-                        <h5>Web Application</h5>
-                    </span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="img/project_thumbs/mwcaisse.jpg" />
-            </div>
-            <a href="project.html">
-                <div class="project-info">
-                    <span class="project-text">
-                        <h3>mwcaisse.com</h3>
-                        <h5>Web Design</h5>
-                    </span>
-                </div>
-            </a>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <img class="card-img-top" src="img/project_thumbs/pushfile.jpg" />
-            </div>
-            <a href="project.html">
-                <div class="project-info">
-                    <span class="project-text">
-                        <h3>PushFile</h3>
-                        <h5>Web + Android Application</h5>
-                    </span>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-<!-- End of Projects Div-->
+    
 
-<div id="contact" class="black-container">
-    <div class="container">
-        <h3>Contact</h3>
-        <p>Here be the contact information.</p>
+    <div class="row">
+
+        {% for project in projects %}
+
+            {% if loop.index0 % 3 === 0 %}
+            </div>
+            <div class="row">
+            {% endif %}
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ project.thumbnail }}" />
+                </div>
+                <a href="{{ project.link }}">
+                    <div class="project-info">
+                        <span class="project-text">
+                            <h3>{{ project.name }}</h3>
+                            <h5>{{ project.description }}</h5>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    
     </div>
-</div>
+    <!-- End of Projects Div-->
+
+    <div id="contact" class="black-container">
+        <div class="container">
+            <h3>Contact</h3>
+            <p>Here be the contact information.</p>
+        </div>
+    </div>
 
 {% endblock %}

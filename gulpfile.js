@@ -45,13 +45,10 @@ gulp.task('restore', [
 
 function getDataForFile(file) {
     var fileName = file.relative;
-    console.log("File: " + fileName);
     if (fileName === "index.njk") {
         return require("./src/data/index.json");
     } else if (fileName === "projects\\cartracker.njk") {
-        var data = require("./src/data/projects/cartracker.json");
-        console.log(data);
-        return data;
+        return require("./src/data/projects/cartracker.json");
     } else {
         return {};
     }
