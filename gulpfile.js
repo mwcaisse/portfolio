@@ -60,7 +60,7 @@ gulp.task('nunjucks', [
     "nunjucks:render"
 ]);
 
-gulp.task('nunjucks:render', function () {
+gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
     return gulp.src(nunjucksStage + "/**/*.+(html|njk)")
         .pipe(gulpData(getDataForFile))
         .pipe(nunjucksRender({
@@ -135,14 +135,14 @@ gulp.task('dist:img',
         ]).pipe(gulp.dest(dist + "/img"));
     });
 
-gulp.task('dist:html',
+gulp.task('dist:html', ['nunjucks:render'],
     function () {
         return gulp.src([
             "src/**/*.html"
         ]).pipe(gulp.dest(dist + "/"));
     });
 
-gulp.task('dist:lib',
+gulp.task('dist:lib', ['restore'], 
     function () {
         return gulp.src([
             "src/lib/**/*.*"
