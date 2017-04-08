@@ -10,6 +10,7 @@ var gulpClean = require("gulp-clean");
 var gulpData = require("gulp-data");
 var gulpRename = require("gulp-rename");
 var merge = require("merge-stream");
+var path = require("path");
 
 var libs = './src/lib/';
 var dist = './dist/';
@@ -45,13 +46,11 @@ gulp.task('restore', [
 ]);
 
 function getDataForFile(file) {
-    var fileName = file.relative;
-    console.log("file: " + file.relative);
-    if (fileName === "index.njk") {
-        return require("./src/data/index.json");
-    } else if (fileName === "projects\\cartracker.njk") {
-        return require("./src/data/projects/cartracker.json");
-    } else {
+    var fileName = file.relative.replace(".njk", ".json");
+    console.log("file: " + fileName);
+    try {
+        return require("./src/data/" + fileName);
+    } catch (ex) {
         return {};
     }
 }
