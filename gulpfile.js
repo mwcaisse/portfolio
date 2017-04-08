@@ -54,6 +54,10 @@ function getDataForFile(file) {
     }
 }
 
+function manageNunjucksEnvironment(env) {
+    env.addGlobal("contextRoot", "/portfolio/");
+}
+
 gulp.task('nunjucks', [
     "nunjucks:stage",
     "nunjucks:render"
@@ -63,7 +67,8 @@ gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
     return gulp.src(nunjucksStage + "/**/*.+(html|njk)")
         .pipe(gulpData(getDataForFile))
         .pipe(nunjucksRender({
-            path: ["src/templates"]
+            path: ["src/templates"],
+            manageEnv: manageNunjucksEnvironment
         }))
         .pipe(gulp.dest(dist + "/"));
 });

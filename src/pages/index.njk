@@ -166,9 +166,9 @@
 
             <div class="col-4">
                 <div class="card">
-                    <img class="card-img-top" src="{{ project.thumbnail }}" />
+                    <img class="card-img-top" src="{{ contextRoot }}{{ project.thumbnail }}" />
                 </div>
-                <a href="{{ project.link }}">
+                <a href="{{ contextRoot }}{{ project.link }}">
                     <div class="project-info">
                         <span class="project-text">
                             <h3>{{ project.name }}</h3>
