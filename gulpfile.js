@@ -47,7 +47,6 @@ gulp.task('restore', [
 
 function getDataForFile(file) {
     var fileName = file.relative.replace(".njk", ".json");
-    console.log("file: " + fileName);
     try {
         return require("./src/data/" + fileName);
     } catch (ex) {
