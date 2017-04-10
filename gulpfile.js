@@ -15,6 +15,7 @@ var path = require("path");
 var libs = './src/lib/';
 var dist = './dist/';
 var stage = "./dist-stage/";
+var distLocal = './dist-local/portfolio';
 var nunjucksStage = stage + "/nunjucks/";
 
 gulp.task('default', function () {
@@ -153,6 +154,17 @@ gulp.task('dist:lib', ['restore'],
         ]).pipe(gulp.dest(dist + "/lib"));
     });
 
+gulp.task('dist-local',
+    ['dist'],
+    function() {
+        return gulp.src(dist + "/**/*.*").pipe(gulp.dest(distLocal));
+    });
+
+gulp.task("dist-local:clean",
+    function () {
+        return gulp.src(distLocal, { read: false }).pipe(gulpClean());
+    });
+
 gulp.task('dist', [
     'dist:css',
     'dist:js',
@@ -164,5 +176,6 @@ gulp.task('dist', [
 
 gulp.task("clean", [
     "dist:clean",
-    "stage:clean"
+    "stage:clean",
+    "dist-local:clean"
 ]);
