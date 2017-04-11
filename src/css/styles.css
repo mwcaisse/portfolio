@@ -228,32 +228,9 @@
 .project-description h3, h4 {
     text-align: center;
 }
-.project-description p {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.project-description p:first-of-type {
-    padding-top: 15px;
-}
 
-.project-description p:last-of-type {
-    padding-bottom: 15px;
-}
-
-.project-approach h3 {
+.project-approach h3, h4 {
     text-align: center;
-}
-
-.project-approach p {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.project-approach p:first-of-type {
-    padding-top: 15px;
-}
-
-.project-approach p:last-of-type {
-    padding-bottom: 15px;
 }
 
 .project-images img {

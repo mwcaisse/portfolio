@@ -28,8 +28,8 @@
             <h2>{{ type }}</h2>
         </div>
     </div>
-
-    <div>
+ 
+    <div class="container">
         <div class="row">
             <div class="col project-description">
                 <h3>About the Project</h3>
@@ -47,11 +47,12 @@
         </div>
     </div>
 
-    <div class="project-images">
+    <div class="container project-images">
         {% for image in images %}
         <div class="row">
             <img src="{{ contextRoot }}{{ image }}" />
         </div>
         {% endfor %}
     </div>
+
 {% endblock %}
