@@ -1,0 +1,15 @@
+﻿{
+
+  "name": "Mirror Mirror",
+  "type": "Web + Android Application",
+  "relatedSkills": [
+
+  ],
+  "about": "partials/mirrormirror/about.html",
+  "approach": "partials/mirrormirror/approach.html",
+  "images": []
+
+
+
+
+}

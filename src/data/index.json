@@ -129,28 +129,28 @@
       "link":  "projects/cartracker.html" 
     },
     {
-      "name": "ShowReminder",
+      "name": "Show Reminder",
       "description": "Web Application",
       "thumbnail": "img/project_thumbs/showreminder.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/showreminder.html"
     },
     {
       "name": "MirrorMirror",
       "description": "Web Application",
       "thumbnail": "img/project_thumbs/mirrormirror.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/mirrormirror.html"
     },
     {
       "name": "mwcaisse.com",
       "description": "Web Design",
       "thumbnail": "img/project_thumbs/mwcaisse.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/mwcaisse.html"
     },
     {
-      "name": "PushFile",
+      "name": "Push File",
       "description": "Web + Android Application",
       "thumbnail": "img/project_thumbs/pushfile.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/pushfile.html"
     }
   ] 
 }

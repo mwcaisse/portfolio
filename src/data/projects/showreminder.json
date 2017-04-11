@@ -1,0 +1,11 @@
+﻿{
+
+  "name": "Show Reminder",
+  "type": "Web  Application",
+  "relatedSkills": [
+
+  ],
+  "about": "partials/showreminder/about.html",
+  "approach": "partials/showreminder/approach.html",
+  "images": []
+}

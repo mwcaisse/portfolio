@@ -1,0 +1,15 @@
+﻿{
+
+  "name": "PushFile",
+  "type": "Web + Android Application",
+  "relatedSkills": [
+
+  ],
+  "about": "partials/pushfile/about.html",
+  "approach": "partials/pushfile/approach.html",
+  "images": []
+
+
+
+
+}
