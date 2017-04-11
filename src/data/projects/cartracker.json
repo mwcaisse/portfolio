@@ -1,6 +1,29 @@
 ﻿{
 
   "name": "Car Tracker",
-  "type":  "Web + Android Application"
+  "type": "Web + Android Application",
+  "relatedSkills": [
+    "Java",
+    "Android SDK",
+    "HTML",
+    "Javascript",
+    "KnockoutjS",
+    "RequireJS",
+    "mybatis",
+    "MariaDB",
+    "SQL",
+    "Spring Framework",
+    "Jenkins"
+  ],
+  "about": "partials/cartracker/about.html",
+  "approach": "partials/cartracker/approach.html",
+  "images": [
+    "img/projects/cartracker/cartracker_1.png",
+    "img/projects/cartracker/cartracker_2.png",
+    "img/projects/cartracker/cartracker_3.png"
+  ]
+
+
+  
 
 }

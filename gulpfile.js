@@ -86,11 +86,11 @@ gulp.task("nunjucks:stage:other", function() {
 
 gulp.task("nunjucks:stage:projects", function() {
     var projects = [
-        "cartracker",
+        "cartracker"/*,
         "showreminder",
         "mirrormirror",
         "mwcaisse",
-        "pushfile"
+        "pushfile"*/
     ];
 
     var streams = merge();
