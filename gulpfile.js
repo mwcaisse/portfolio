@@ -135,8 +135,8 @@ gulp.task('dist:js',
 gulp.task('dist:img',
     function () {
         return gulp.src([
-            "src/img/**/*.jpg",
-            "src/img/**/*.png"
+            "src/img-fin/**/*.jpg",
+            "src/img-fin/**/*.png"
         ]).pipe(gulp.dest(dist + "/img"));
     });
 
