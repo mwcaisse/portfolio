@@ -123,7 +123,7 @@
   ],
   "projects": [
     {
-      "name": "CarTracker",
+      "name": "Car Tracker",
       "description": "Web + Android Application",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
       "link":  "projects/cartracker.html" 
