@@ -1,15 +1,18 @@
 ﻿{
 
   "name": "mwcaisse.com",
-  "type": "Web Design",
+  "type": "Web Design and Development",
   "relatedSkills": [
-
+    "HTML5",
+    "CSS",
+    "Javascript",
+    "Bootstrap",
+    "Nunjucks",
+    "gulp"
   ],
   "about": "partials/mwcaisse/about.html",
   "approach": "partials/mwcaisse/approach.html",
-  "images": []
-
-
-
-
+  "images": [
+    "img/projects/mwcaisse/mwcaisse_1.jpg"
+  ]
 }
