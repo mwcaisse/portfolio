@@ -41,20 +41,9 @@ gulp.task('restore:font-awesome', function () {
 
 });
 
-gulp.task('restore:knockout', function() {
-    return gulp.src([
-        'node_modules/knockout/build/output/knockout-*.js',
-        '!node_modules/knockout/build/output/knockout-*.debug.js'
-    ]).pipe(gulpRename({
-        basename: "knockout",
-        extname: ".js"
-    })).pipe(gulp.dest(libs + 'knockout'));
-});
-
 gulp.task('restore', [
     'restore:bootstrap',
-    'restore:font-awesome',
-    'restore:knockout'
+    'restore:font-awesome'
 ]);
 
 function getDataForFile(file) {

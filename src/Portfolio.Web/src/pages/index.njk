@@ -189,7 +189,7 @@
         <div class="container">
             <h3>Contact</h3>
             
-            <form>
+            <form id="formContact">
                 <div class="form-group">
                     <label for="inputName">Name</label>
                     <input type="text" class="form-control" id="inputName" placeholder="Enter name" />
@@ -211,4 +211,11 @@
         </div>
     </div>
 
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 {% endblock %}
