@@ -49,19 +49,19 @@ namespace Portfolio.API.Data
             modelBuilder.Entity<ContactMessage>()
                 .Property(m => m.Name)
                 .HasColumnName("NAME")
-                .HasMaxLength(250)
+                .HasMaxLength(ContactMessage.PropertyNameMaxLength)
                 .IsRequired();
 
             modelBuilder.Entity<ContactMessage>()
                 .Property(m => m.Email)
                 .HasColumnName("EMAIL")
-                .HasMaxLength(250)
+                .HasMaxLength(ContactMessage.PropertyEmailMaxLength)
                 .IsRequired();
 
             modelBuilder.Entity<ContactMessage>()
                 .Property(m => m.Message)
                 .HasColumnName("MESSAGE")
-                .HasMaxLength(4000)
+                .HasMaxLength(ContactMessage.PropertyMessageMaxLength)
                 .IsRequired();
 
         }
