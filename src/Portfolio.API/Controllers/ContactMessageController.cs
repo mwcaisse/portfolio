@@ -22,12 +22,23 @@ namespace Portfolio.API.Controllers
             _contactMessageManager = new ContactMessageManager(dataContext);
         }
 
+        [HttpGet]
+        public JsonResponse<IEnumerable<ContactMessage>> GetAll()
+        {
+            return new JsonResponse<IEnumerable<ContactMessage>>()
+            {
+                Data = _contactMessageManager.Get(),
+                ErrorMessage = null
+            };
+        }
+
         [HttpPost]
-        public JsonResponse<bool> Add([FromBody] ContactMessage message)
+        public JsonResponse<bool> Add([FromBody] ContactMessageViewModel message)
         {
             try
             {
-                _contactMessageManager.Add(message);
+                var remoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
+                _contactMessageManager.Add(message, remoteAddress);
                 return new JsonResponse<bool>()
                 {
                     Data = true,

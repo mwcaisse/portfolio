@@ -64,6 +64,12 @@ namespace Portfolio.API.Data
                 .HasMaxLength(ContactMessage.PropertyMessageMaxLength)
                 .IsRequired();
 
+            modelBuilder.Entity<ContactMessage>()
+                .Property(m => m.RemoteAddress)
+                .HasColumnName("REMOTE_ADDRESS")
+                .HasMaxLength(ContactMessage.PropertyRemoteAddressMaxLength)
+                .IsRequired();
+
         }
 
     }

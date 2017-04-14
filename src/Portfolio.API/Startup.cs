@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MySQL.Data.Entity.Extensions;
+using Portfolio.API.Data;
 
 namespace Portfolio.API
 {
@@ -18,6 +20,7 @@ namespace Portfolio.API
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("dbConfig.json")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -27,6 +30,12 @@ namespace Portfolio.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddOptions();
+
+            services.AddDbContext<DataContext>(
+                options => options.UseMySQL(Configuration.GetSection("connectionString").Value));
+
             // Add framework services.
             services.AddMvc();
         }

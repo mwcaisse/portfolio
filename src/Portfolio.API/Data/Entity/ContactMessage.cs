@@ -20,6 +20,7 @@ namespace Portfolio.API.Data.Entity
         public static readonly int PropertyMessageMaxLength = 4000;
         public string Message { get; set; }
 
+        public static readonly int PropertyRemoteAddressMaxLength = 100;
         public string RemoteAddress { get; set; }
 
         public DateTime CreateDate { get; set; }
