@@ -95,6 +95,14 @@
     border: 1px solid rgba(255, 255, 255, .125);
 }
 
+    .black-container input, .black-container textarea {
+        background-color: rgba(255, 255, 255, 0.5)
+    }
+
+    .black-container input:focus, .black-container textarea:focus {
+        background-color: rgba(255, 255, 255, 0.65)
+    }
+
 #experience {
     padding-top: 30px;
     padding-bottom: 30px;

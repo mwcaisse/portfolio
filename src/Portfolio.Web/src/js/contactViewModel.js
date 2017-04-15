@@ -1,4 +1,24 @@
-﻿function AlertViewModel() {
+﻿
+ko.extenders.required = function (target, opts) {
+
+    target.OverrideDisplay = opts.OverrideDisplay;
+
+    target.HasError = ko.computed(function () {
+        var value = target();
+        return null === value || typeof value === "undefined" || value.length === 0;
+    });
+
+    target.ShowError = ko.computed(function() {
+        return !target.OverrideDisplay() && target.HasError();
+    });
+
+    target.ValidationMessage = (opts.Name || "Field") + " cannot be blank!";
+
+    return target;
+};
+
+
+function AlertViewModel() {
 
     var self = this;
 
@@ -7,12 +27,12 @@
     self.BoldText = ko.observable("");
     self.Message = ko.observable("");
 
-    self.HasBoldText = ko.computed(function() {
+    self.HasBoldText = ko.computed(function () {
         var text = self.BoldText();
         return null !== text && typeof text !== "undefined" && text.length > 0;
     });
 
-    self.Hide = function() {
+    self.Hide = function () {
         self.Show(false);
         self.Type("");
         self.BoldText("");
@@ -24,13 +44,17 @@ function ContactViewModel() {
 
     var self = this;
 
-    self.Name = ko.observable();
-    self.Email = ko.observable();
-    self.Message = ko.observable();
+    self.OverrideErrorDisplay = ko.observable(false);
+
+    self.Name = ko.observable().extend({ required: { Name: "Name", OverrideDisplay: self.OverrideErrorDisplay}});
+    self.Email = ko.observable().extend({ required: { Name: "Email", OverrideDisplay: self.OverrideErrorDisplay } });
+    self.Message = ko.observable().extend({ required: { Name: "Message", OverrideDisplay: self.OverrideErrorDisplay } });
 
     self.Alert = new AlertViewModel();
 
-    self.Send = function() {
+    self.Send = function () {
+        self.OverrideErrorDisplay(false);
+
         var message = ko.toJS({
             name: self.Name,
             email: self.Email,
@@ -75,7 +99,6 @@ function ContactViewModel() {
     };
 
 }
-
 
 $(document).ready(function() {
 
