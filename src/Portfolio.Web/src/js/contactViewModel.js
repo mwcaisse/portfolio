@@ -44,7 +44,7 @@ function ContactViewModel() {
 
     var self = this;
 
-    self.OverrideErrorDisplay = ko.observable(false);
+    self.OverrideErrorDisplay = ko.observable(true);
 
     self.Name = ko.observable().extend({ required: { Name: "Name", OverrideDisplay: self.OverrideErrorDisplay}});
     self.Email = ko.observable().extend({ required: { Name: "Email", OverrideDisplay: self.OverrideErrorDisplay } });
@@ -52,8 +52,18 @@ function ContactViewModel() {
 
     self.Alert = new AlertViewModel();
 
+    self.IsValid = function() {
+        return !self.Name.HasError() &&
+               !self.Email.HasError() &&
+               !self.Message.HasError();
+
+    };
+
     self.Send = function () {
         self.OverrideErrorDisplay(false);
+        if (!self.IsValid()) {
+            return;
+        }
 
         var message = ko.toJS({
             name: self.Name,
@@ -96,6 +106,8 @@ function ContactViewModel() {
         self.Name("");
         self.Email("");
         self.Message("");
+
+        self.OverrideErrorDisplay(true);
     };
 
 }
