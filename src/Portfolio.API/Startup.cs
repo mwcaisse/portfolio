@@ -36,6 +36,8 @@ namespace Portfolio.API
             services.AddDbContext<DataContext>(
                 options => options.UseMySQL(Configuration.GetSection("connectionString").Value));
 
+            services.AddCors();
+            
             // Add framework services.
             services.AddMvc();
         }
@@ -45,6 +47,12 @@ namespace Portfolio.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+            );
 
             app.UseMvc();
         }

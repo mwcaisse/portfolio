@@ -192,20 +192,28 @@
             <form id="formContact">
                 <div class="form-group">
                     <label for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Enter name" />
+                    <input type="text" class="form-control" id="inputName" placeholder="Enter name" data-bind="textInput: $data.Name"/>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" />
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" data-bind="textInput: $data.Email"/>
                 </div>
 
                 <div class="form-group">
                     <label for="inputMessage">Message</label>
-                    <textarea class="form-control" id="inputMessage" rows="5"></textarea>
+                    <textarea class="form-control" id="inputMessage" rows="5" data-bind="textInput: $data.Message"></textarea>
                 </div>
 
-                <button type="button" class="btn btn-primary">Send</button>
+                <button type="button" class="btn btn-primary" data-bind="click: $data.Send">Send</button>
+
+                <div data-bind="with: $data.Alert" style="padding-top: 15px;">
+                    <div class="alert" data-bind="visible: $data.Show, css: $data.Type">
+                        <button type="button" class="close" data-bind="click: $data.Hide"><span aria-hidden="true">&times;</span></button>
+                        <strong data-bind="visible: $data.HasBoldText, text: $data.BoldText"></strong>&nbsp;<span data-bind="text: $data.Message">This is the alert message!</span>                        
+                    </div>
+                </div>
+
             </form>
 
         </div>
@@ -216,6 +224,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>    
+    <script type="text/javascript" src="{{ contextRoot }}js/contactViewModel.js"></script>
 {% endblock %}

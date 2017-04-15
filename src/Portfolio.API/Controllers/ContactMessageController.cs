@@ -33,7 +33,7 @@ namespace Portfolio.API.Controllers
         }
 
         [HttpPost]
-        public JsonResponse<bool> Add([FromBody] ContactMessageViewModel message)
+        public JsonResponse<bool> Add([FromBody]ContactMessageViewModel message)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace Portfolio.API.Controllers
                     ErrorMessage = e.Message
                 };
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return new JsonResponse<bool>()
                 {
