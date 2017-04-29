@@ -22,16 +22,6 @@ namespace Portfolio.API.Controllers
             _contactMessageManager = new ContactMessageManager(dataContext);
         }
 
-        [HttpGet]
-        public JsonResponse<IEnumerable<ContactMessage>> GetAll()
-        {
-            return new JsonResponse<IEnumerable<ContactMessage>>()
-            {
-                Data = _contactMessageManager.Get(),
-                ErrorMessage = null
-            };
-        }
-
         [HttpPost]
         public JsonResponse<bool> Add([FromBody]ContactMessageViewModel message)
         {
