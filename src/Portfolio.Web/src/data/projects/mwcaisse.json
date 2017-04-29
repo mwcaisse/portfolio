@@ -8,7 +8,10 @@
     "Javascript",
     "Bootstrap",
     "Nunjucks",
-    "gulp"
+    "gulp",
+    ".NET Core",
+    "C#",
+    "MariaDB"
   ],
   "about": "partials/mwcaisse/about.html",
   "approach": "partials/mwcaisse/approach.html",
