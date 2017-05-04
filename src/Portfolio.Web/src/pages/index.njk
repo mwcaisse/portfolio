@@ -228,7 +228,7 @@
                         <button type="button" class="btn btn-primary" data-bind="click: $data.Send">Send</button>
 
                         <div data-bind="with: $data.Alert" style="padding-top: 15px;">
-                            <div class="alert" data-bind="visible: $data.Show, css: $data.Type">
+                            <div class="alert" data-bind="visible: $data.Show, css: $data.Type" style="display: none">
                                 <button type="button" class="close" data-bind="click: $data.Hide"><span aria-hidden="true">&times;</span></button>
                                 <strong data-bind="visible: $data.HasBoldText, text: $data.BoldText"></strong>&nbsp;<span data-bind="text: $data.Message">This is the alert message!</span>
                             </div>
