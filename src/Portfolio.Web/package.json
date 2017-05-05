@@ -9,7 +9,8 @@
     "gulp-clean": "0.3.2",
     "gulp-data": "1.2.1",
     "gulp-rename": "1.2.2",
-    "merge-stream":  "1.0.1" 
+    "merge-stream": "1.0.1",
+    "gulp-environments": "0.1.2"
  },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",

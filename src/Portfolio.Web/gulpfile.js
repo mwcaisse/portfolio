@@ -11,6 +11,7 @@ var gulpData = require("gulp-data");
 var gulpRename = require("gulp-rename");
 var merge = require("merge-stream");
 var path = require("path");
+var environments = require("gulp-environments");
 
 var libs = './src/lib/';
 var dist = './dist/';
@@ -56,7 +57,11 @@ function getDataForFile(file) {
 }
 
 function manageNunjucksEnvironment(env) {
-    env.addGlobal("contextRoot", "/portfolio/");
+    if (environments.production()) {
+        env.addGlobal("contextRoot", "/");
+    } else {
+        env.addGlobal("contextRoot", "/portfolio/");
+    }
 }
 
 gulp.task('nunjucks', [
