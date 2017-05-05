@@ -14,5 +14,9 @@
   ],
   "about": "partials/showreminder/about.html",
   "approach": "partials/showreminder/approach.html",
-  "images": []
+  "images": [
+    "img/projects/showreminder/showreminder_1.png",
+    "img/projects/showreminder/showreminder_2.png",
+    "img/projects/showreminder/showreminder_3.png"
+  ]
 }

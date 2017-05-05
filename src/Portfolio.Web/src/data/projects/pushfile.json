@@ -13,9 +13,10 @@
   ],
   "about": "partials/pushfile/about.html",
   "approach": "partials/pushfile/approach.html",
-  "images": []
-
-
-
+  "images": [
+    "img/projects/pushfile/pushfile_1.png",
+    "img/projects/pushfile/pushfile_2.png",
+    "img/projects/pushfile/pushfile_3.png"
+  ]
 
 }
