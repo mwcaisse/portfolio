@@ -1,4 +1,9 @@
 ﻿
+var apiRoot = "";
+
+
+
+
 ko.extenders.required = function (target, opts) {
 
     target.OverrideDisplay = opts.OverrideDisplay;
@@ -75,7 +80,7 @@ function ContactViewModel() {
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:54248/api/contactmessage/",
+            url: apiRoot + "contactmessage/",
             data: JSON.stringify(message),
             contentType: "application/json",
             dataType: "JSON",
@@ -113,6 +118,9 @@ function ContactViewModel() {
 }
 
 $(document).ready(function() {
+
+    //load in the API Root from the page
+    apiRoot = $("#apiRoot").val();
 
     var vm = new ContactViewModel();
     var element = $("#formContact")[0];

@@ -59,8 +59,10 @@ function getDataForFile(file) {
 function manageNunjucksEnvironment(env) {
     if (environments.production()) {
         env.addGlobal("contextRoot", "/");
+        env.addGlobal("apiRoot", "https://mwcaisse.com/api/");
     } else {
         env.addGlobal("contextRoot", "/portfolio/");
+        env.addGlobal("apiRoot", "http://localhost:54248/api/");
     }
 }
 
