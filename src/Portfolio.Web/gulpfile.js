@@ -140,6 +140,14 @@ gulp.task('dist:img',
         ]).pipe(gulp.dest(dist + "/img"));
     });
 
+gulp.task('dist:res',
+    function() {
+        return gulp.src([
+            "src/res/**/*"
+        ]).pipe(gulp.dest(dist + "/res"));
+    }
+)
+
 gulp.task('dist:html', ['nunjucks:render'],
     function () {
         return gulp.src([
@@ -157,7 +165,7 @@ gulp.task('dist:lib', ['restore'],
 gulp.task('dist-local',
     ['dist'],
     function() {
-        return gulp.src(dist + "/**/*.*").pipe(gulp.dest(distLocal));
+        return gulp.src(dist + "/**/*").pipe(gulp.dest(distLocal));
     });
 
 gulp.task("dist-local:clean",
@@ -169,6 +177,7 @@ gulp.task('dist', [
     'dist:css',
     'dist:js',
     'dist:img',
+    'dist:res',
     'nunjucks',
     'dist:lib'//,
     //'stage:clean'
