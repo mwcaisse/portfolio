@@ -4,12 +4,13 @@
   "type": "Web Application",
   "relatedSkills": [
     "Java",
-    "Spring",
+    "Spring Framework",
     "Gradle",
     "Knockout",
     "Javascript",
     "Bootstrap",
-    "MariaDB"
+    "MariaDB",
+    "mybatis"
   ],
   "about": "partials/mirrormirror/about.html",
   "approach": "partials/mirrormirror/approach.html",
