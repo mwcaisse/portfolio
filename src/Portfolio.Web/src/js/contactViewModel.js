@@ -76,8 +76,6 @@ function ContactViewModel() {
             message: self.Message
         });
 
-        console.log(message);
-
         $.ajax({
             method: "POST",
             url: apiRoot + "contactmessage/",
