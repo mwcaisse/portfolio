@@ -1,9 +1,15 @@
 ﻿{
 
   "name": "Mirror Mirror",
-  "type": "Web + Android Application",
+  "type": "Web Application",
   "relatedSkills": [
-
+    "Java",
+    "Spring",
+    "Gradle",
+    "Knockout",
+    "Javascript",
+    "Bootstrap",
+    "MariaDB"
   ],
   "about": "partials/mirrormirror/about.html",
   "approach": "partials/mirrormirror/approach.html",
