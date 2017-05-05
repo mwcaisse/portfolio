@@ -3,7 +3,13 @@
   "name": "PushFile",
   "type": "Web + Android Application",
   "relatedSkills": [
-
+    "Java",
+    "Knockout",
+    "jQuery",
+    "Spring Framework",
+    "Spring Security",
+    "Android",
+    "Maven"
   ],
   "about": "partials/pushfile/about.html",
   "approach": "partials/pushfile/approach.html",
