@@ -207,6 +207,12 @@
     padding-bottom: 15px;
 }
 
+#contact-icon {
+    font-size: 350px;
+    text-align: center;
+    line-height: 100%;
+}
+
 #footer-right li {
     display: inline-block;
 }
