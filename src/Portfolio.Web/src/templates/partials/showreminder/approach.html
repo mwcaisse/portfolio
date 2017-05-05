@@ -1,5 +1,8 @@
-﻿<p>
-    The approach was to create a simplistic UI using Angular 2 and Bootstrap 4 to allow users to search for a TV Show and add it to their tracked list. The user can then check the site periodically for the next air date of their tracked shows.
-</p>
+﻿<p>I needed a way to lookup and find show information, quickly present it to the user, and not constantly request data from show information source.
+    I decided upon using <a href="https://www.themoviedb.org/" target="_blank">The Movie Database</a> as a source for show information. Thier Web API was nicely documented, service is reliable, and contained all of the information I needed.</p>
+
+<p>The caching portion uses Entity Framework and a .NET Core Web API project to search and store show information from The Movie Database.</p>
+
+<p>The user interface was written using Angular 2 and Bootstrap 4, backed by a .NET Core WebMVC Project.</p>
 
 <p>The source code for the application can be found <a href="https://github.com/mwcaisse/ShowReminder" target="_blank">here</a>.</p>
