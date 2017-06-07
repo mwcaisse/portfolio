@@ -15,7 +15,7 @@
         "Worked on a financial tool to price parts, quickly coming up to speed on new technologies and assuming a leadership role on the team.",
         "Contributed to process improvement efforts, including automating our build process and down selecting static code analysis tools.",
         "Developed a proof of concept application for a mobile indoor navigation using iBeacons and Apache Cordova.",
-        "Developed several smaller projects including an application to manage and send mobile push notifications, a project repository hosted in sharepoint, and a web application to create and manage company events."
+        "Developed several smaller projects including an application to manage and send mobile push notifications, a project repository hosted in SharePoint, and a web application to create and manage company events."
       ],
       "skills": [
         "C#",
@@ -101,7 +101,7 @@
         }
       ],
       "points": [
-        "Automated the deployments of muliple projects by creating an application that is easily configurable to specify deployment targets and methods",
+        "Automated the deployments of multiple projects by creating an application that is easily configurable to specify deployment targets and methods",
         "Mentored a fellow intern through the creation on a web based application and backend service to manage financial information."
       ],
       "skills": [
@@ -112,7 +112,8 @@
         "HTML",
         "CSS",
         "JMS",
-        "Apache Camel"
+        "Apache Camel",
+        "MyBatis"
       ]
     },
     {

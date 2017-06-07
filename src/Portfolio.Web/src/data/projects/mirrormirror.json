@@ -10,15 +10,11 @@
     "Javascript",
     "Bootstrap",
     "MariaDB",
-    "mybatis"
+    "MyBatis"
   ],
   "about": "partials/mirrormirror/about.html",
   "approach": "partials/mirrormirror/approach.html",
   "images": [
     "img/projects/mirrormirror/mirrormirror_1.png"
   ]
-
-
-
-
 }

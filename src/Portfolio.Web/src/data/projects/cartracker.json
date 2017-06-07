@@ -9,7 +9,7 @@
     "Javascript",
     "KnockoutJS",
     "RequireJS",
-    "mybatis",
+    "MyBatis",
     "MariaDB",
     "SQL",
     "Spring Framework",
@@ -22,8 +22,4 @@
     "img/projects/cartracker/cartracker_2.png",
     "img/projects/cartracker/cartracker_3.png"
   ]
-
-
-  
-
 }
