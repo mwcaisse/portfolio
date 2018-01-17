@@ -2,12 +2,34 @@
 
   "companies": [
     {
+      "name": "Insurify",
+      "title": "Software Engineer",
+      "dates": [
+        {
+          "start": "December 2017",
+          "end": "Present"
+        }
+      ],
+      "points": [
+        "Developed RESTful APIs in Django/Python."
+      ],
+      "skills": [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "SQL",
+        "MySQL",
+        "Jenkins",
+        "Git"
+      ]
+    },
+    {
       "name": "Raytheon Company",
       "title": "Software Developer",
       "dates": [
         {
           "start": "May 2015",
-          "end": "Present"
+          "end": "December 2017"
         }
       ],
       "points": [

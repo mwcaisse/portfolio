@@ -60,8 +60,9 @@
             <h4>Languages</h4>
             <ul>
                 <li>Java</li>
-                <li>C#</li>
+                <li>C#</li>                
                 <li>JavaScript</li>
+                <li>Python</li>
                 <li>C/C++</li>
                 <li>SQL</li>
             </ul>
@@ -124,7 +125,7 @@
         {% for company in companies %}
 
             <div class="row">
-                <div class="col-3 align-self-center">
+                <div class="col-4 align-self-center">
                     <div class="timeline-icon left">
                         <i class="fa fa-map-marker fa-2x"></i>
                     </div>
@@ -134,7 +135,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-8">
                     <div class="card experience-card">
                         <div class="card-block">
                             <h4 class="card-title">{{company.name}}</h4>
