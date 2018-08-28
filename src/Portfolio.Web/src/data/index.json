@@ -1,9 +1,8 @@
 ﻿{
-
   "companies": [
     {
       "name": "Insurify",
-      "title": "Software Engineer",
+      "title": "Lead Integrations Developer",
       "dates": [
         {
           "start": "December 2017",
@@ -11,7 +10,9 @@
         }
       ],
       "points": [
-        "Developed RESTful APIs in Django/Python."
+        "Oversaw the development of all integrations, handled communication with partners, and defined requirements.",
+        "Enhanced the protection of our customer data by improving encryption practices and utilizing a KMS",
+        "Quickly learned Python/Django and created a RESTFul backend for a new vertical."
       ],
       "skills": [
         "Python",
@@ -20,7 +21,10 @@
         "SQL",
         "MySQL",
         "Jenkins",
-        "Git"
+        "Git",
+        "JIRA",
+        "AWS",
+        "AWS KMS"
       ]
     },
     {
