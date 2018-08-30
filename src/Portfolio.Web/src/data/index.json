@@ -2,7 +2,7 @@
   "companies": [
     {
       "name": "Insurify",
-      "title": "Lead Integrations Developer",
+      "title": "Software Engineer",
       "dates": [
         {
           "start": "December 2017",
@@ -11,7 +11,7 @@
       ],
       "points": [
         "Oversaw the development of all integrations, handled communication with partners, and defined requirements.",
-        "Enhanced the protection of our customer data by improving encryption practices and utilizing a KMS",
+        "Enhanced the protection of our customer data by improving encryption practices.",
         "Quickly learned Python/Django and created a RESTFul backend for a new vertical."
       ],
       "skills": [
