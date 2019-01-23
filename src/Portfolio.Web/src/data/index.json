@@ -160,22 +160,22 @@
   ],
   "projects": [
     {
+      "name": "PyDeployer",
+      "description": "Automated Deployer",
+      "thumbnail": "img/project_thumbs/cartracker.jpg",
+      "link": "projects/cartracker.html"
+    },
+    {
+      "name": "CrabZinc",
+      "description": "Blogging Platform",
+      "thumbnail": "img/project_thumbs/cartracker.jpg",
+      "link": "projects/cartracker.html"
+    },
+    {
       "name": "Car Tracker",
       "description": "Web + Android Application",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
-      "link":  "projects/cartracker.html" 
-    },
-    {
-      "name": "Show Reminder",
-      "description": "Web Application",
-      "thumbnail": "img/project_thumbs/showreminder.jpg",
-      "link": "projects/showreminder.html"
-    },
-    {
-      "name": "MirrorMirror",
-      "description": "Web Application",
-      "thumbnail": "img/project_thumbs/mirrormirror.jpg",
-      "link": "projects/mirrormirror.html"
+      "link": "projects/cartracker.html"
     },
     {
       "name": "mwcaisse.com",
@@ -184,10 +184,11 @@
       "link": "projects/mwcaisse.html"
     },
     {
-      "name": "Push File",
-      "description": "Web + Android Application",
-      "thumbnail": "img/project_thumbs/pushfile.jpg",
-      "link": "projects/pushfile.html"
+      "name": "Show Reminder",
+      "description": "Web Application",
+      "thumbnail": "img/project_thumbs/showreminder.jpg",
+      "link": "projects/showreminder.html"
     }
+
   ] 
 }
