@@ -2,7 +2,7 @@
   "companies": [
     {
       "name": "Insurify",
-      "title": "Software Engineer",
+      "title": "Head of Integrations",
       "dates": [
         {
           "start": "December 2017",
@@ -11,6 +11,7 @@
       ],
       "points": [
         "Oversaw the development of all integrations, handled communication with partners, and defined requirements.",
+        "Lead the development of a key inititive to bring payments onto the site and reach PCI compliance.",
         "Enhanced the protection of our customer data by improving encryption practices.",
         "Quickly learned Python/Django and created a RESTFul backend for a new vertical."
       ],
