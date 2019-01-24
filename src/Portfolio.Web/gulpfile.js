@@ -96,9 +96,7 @@ gulp.task("nunjucks:stage:projects", function() {
     var projects = [
         "cartracker",
         "showreminder",
-        "mirrormirror",
-        "mwcaisse",
-        "pushfile"
+        "mwcaisse"
     ];
 
     var streams = merge();
