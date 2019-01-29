@@ -1,4 +1,162 @@
 ﻿{
+  "skill_categories": [
+    {
+      "name": "Languages",
+      "skills": [
+        {
+          "title": "C#",
+          "logo": "logos/csharp.png"
+        },
+        {
+          "title": "Java",
+          "logo": "logos/java.png"
+        },
+        {
+          "title": "Python",
+          "logo": "logos/python.png"
+        },
+        {
+          "title": "Javascript",
+          "logo": "logos/javascript.png"
+        },
+        {
+          "title": "C/C++",
+          "logo": "logos/cpp.png"
+        },
+        {
+          "title": "SQL",
+          "logo": ""
+        }
+      ]
+    },
+    {
+      "name": "Databases",
+      "skills": [
+        {
+          "title": "Microsoft SQL Server",
+          "logo": ""
+        },
+        {
+          "title": "MariaDB/MySQL",
+          "logo": ""
+        },
+        {
+          "title": "Aurora",
+          "logo": ""
+        },
+        {
+          "title": "Oracle",
+          "logo": ""
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        {
+          "title": "git",
+          "logo": ""
+        },
+        {
+          "title": "TFS",
+          "logo": ""
+        },
+        {
+          "title": "SVN",
+          "logo": ""
+        },
+        {
+          "title": "Maven",
+          "logo": ""
+        },
+        {
+          "title": "Jenkins",
+          "logo": ""
+        },
+        {
+          "title": "Gradle",
+          "logo": ""
+        }
+      ]
+    },
+    {
+      "name": "Libraries",
+      "skills": [
+        {
+          "title": "Entity Framework",
+          "logo": ""
+        },
+        {
+          "title": "django",
+          "logo": ""
+        },
+        {
+          "title": "django REST framework",
+          "logo": ""
+        },
+        {
+          "title": "Vue.js",
+          "logo": ""
+        },
+
+        {
+          "title": "KnockoutJS",
+          "logo": ""
+        },
+
+        {
+          "title": "jQuery",
+          "logo": ""
+        },
+
+        {
+          "title": "Bootstrap",
+          "logo": ""
+        },
+        {
+          "title": "Spring Framework",
+          "logo": ""
+        },
+        {
+          "title": "Apache Solr",
+          "logo": ""
+        },
+        {
+          "title": "MyBatis",
+          "logo": ""
+        }
+      ]
+    },
+    {
+      "name": "Misc",
+      "skills": [
+        {
+          "title": "Sharepoint",
+          "logo": ""
+        },
+        {
+          "title": "SSRS",
+          "logo": ""
+        },
+        {
+          "title": "Linux/Unix",
+          "logo": ""
+        },
+        {
+          "title": "Agile",
+          "logo": ""
+        },
+        {
+          "title": "HTML",
+          "logo": ""
+        },
+        {
+          "title": "CSS",
+          "logo": ""
+        }
+      ]
+    }
+  ], 
   "companies": [
     {
       "name": "Insurify",
@@ -190,5 +348,5 @@
       "link": "projects/showreminder.html"
     }
 
-  ] 
+  ]
 }

@@ -150,6 +150,29 @@
     {% endfor %}
 </div>
 
+<div class="container">
+    <h3 class="title">Skills</h3>
+
+    {% for category in skill_categories %}
+    <div class="card">
+        <div class="card-header">
+            <p class="card-header-title">{{category.name}}</p>
+        </div>
+        <div class="card-content">
+            <div class="columns">
+                {% for skill in category.skills %}
+                <div class="column">
+                    <img src="{{contextRoot }}/img/{{skill.logo}}" style="width: 48px;" />             
+                    <p>{{skill.title}}</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 <!-- Start of Experience Div-->
 <div id="experience" class="black-container">
     <div class="container">
