@@ -41,11 +41,17 @@ gulp.task('restore:font-awesome', function () {
     return merge(css, other);
 });
 
+gulp.task("restore:bulma", function () {
+    return gulp.src([
+        "node_modules/bulma/css/*.*"
+    ]).pipe(gulp.dest(libs + "bulma/css"));
+});
 
 
 gulp.task('restore', [
     'restore:bootstrap',
-    'restore:font-awesome'
+    'restore:font-awesome',
+    "restore:bulma"
 ]);
 
 function getDataForFile(file) {

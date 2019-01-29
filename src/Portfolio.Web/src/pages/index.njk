@@ -120,6 +120,36 @@
 
 <!-- End of Technical Skills Div-->
 
+<div class="container">
+    <h3 class="title">
+        Experience
+    </h3>
+
+    {% for company in companies %}
+        <div class="card" style="margin-bottom:3rem;">
+            <div class="card-header">
+                <p class="card-header-title">{{company.name}}</p>
+                <p class="card-header-title" style="justify-content: flex-end">{{company.title}}</p>
+            </div>
+            <div class="card-content">               
+                {% for point in company.points %}
+                    <p style="padding-bottom: 0.75rem">{{point}}</p>
+                {% endfor %}
+                {% if company.skills.length > 0 %}
+                    <p>
+                        <b>Related Skills:</b> {{ company.skills | join(", ") }}
+                    </p>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                {% for date in company.dates %}
+                <p style="padding:0.75rem">{{date.start}} - {{date.end}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
 <!-- Start of Experience Div-->
 <div id="experience" class="black-container">
     <div class="container">
