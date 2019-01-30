@@ -51,74 +51,7 @@
     </div>
 </div>
 <!-- End of About Me Div-->
-<!-- Start of Technical Skills Div-->
-<div id="skills" class="container">
-    <h3 class="skills-header">Technical Skills</h3>
 
-    <div class="row">
-        <div class="col skills-list">
-            <h4>Languages</h4>
-            <ul>
-                <li>Java</li>
-                <li>C#</li>                
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>C/C++</li>
-                <li>SQL</li>
-            </ul>
-        </div>
-        <div class="col skills-list">
-            <h4>Databases</h4>
-            <ul>
-                <li>MariaDB</li>
-                <li>MySQL</li>
-                <li>Oracle</li>
-                <li>SQL Server</li>
-            </ul>
-        </div>
-        <div class="col skills-list">
-            <h4>Tools</h4>
-            <ul>
-                <li>Git</li>
-                <li>TFS</li>
-                <li>SVN</li>
-                <li>Maven</li>
-                <li>Jenkins</li>
-                <li>Gradle</li>
-            </ul>
-        </div>
-        <div class="col skills-list">
-            <h4>Libraries</h4>
-            <ul>
-                <li>Entity Framework</li>
-                <li>MyBatis</li>
-                <li>JPA</li>
-                <li>Spring Framework</li>
-                <li>Apache Solr</li>
-                <li>Knockout</li>
-                <li>Angular 2</li>
-                <li>jQuery</li>
-                <li>Bootstrap</li>
-                <li>Vue.js</li>
-				<li>Django</li>
-				<li>Django REST Framework</li>
-            </ul>
-        </div>
-        <div class="col skills-list">
-            <h4>Misc</h4>
-            <ul>
-                <li>SharePoint</li>
-                <li>SSRS</li>
-                <li>Unix/Linux</li>
-                <li>Agile</li>
-                <li>HTML</li>
-                <li>CSS</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- End of Technical Skills Div-->
 
 <div class="container">
     <h3 class="title">
@@ -172,49 +105,6 @@
     </div>
     {% endfor %}
 </div>
-
-<!-- Start of Experience Div-->
-<div id="experience" class="black-container">
-    <div class="container">
-        <h3>Experience</h3>
-        {% for company in companies %}
-
-            <div class="row">
-                <div class="col-4 align-self-center">
-                    <div class="timeline-icon left">
-                        <i class="fa fa-map-marker fa-2x"></i>
-                    </div>
-                    <div class="timeline-text left {% if company.dates.length === 2 %}double{% endif %}">
-                        {% for date in company.dates %}
-                         {{date.start}} - {{date.end}} {% if not loop.last %} <br /> {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="col-8">
-                    <div class="card experience-card">
-                        <div class="card-block">
-                            <h4 class="card-title">{{company.name}}</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">{{company.title}}</h6>
-
-                            {% for point in company.points %}
-                                <p>{{point}}</p>
-                            {% endfor %}
-
-                            {% if company.skills.length > 0 %}
-                            <p>
-                                <b>Related Skills:</b> {{ company.skills | join(", ") }}                            
-                            </p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</div>
-
-<!-- End of Experience Div-->
-
 
 
 <!-- Start of Projects Div-->
