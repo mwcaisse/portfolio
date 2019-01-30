@@ -148,7 +148,9 @@ gulp.task('dist:img',
     function () {
         return gulp.src([
             "src/img-fin/**/*.jpg",
-            "src/img-fin/**/*.png"
+            "src/img-fin/**/*.png",
+            "src/img-fin/**/*.gif",
+            "src/img-fin/**/*.svg"
         ]).pipe(gulp.dest(dist + "/img"));
     });
 

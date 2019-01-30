@@ -5,27 +5,27 @@
       "skills": [
         {
           "title": "C#",
-          "logo": "logos/csharp.png"
+          "logo": "csharp.png"
         },
         {
           "title": "Java",
-          "logo": "logos/java.png"
+          "logo": "java.png"
         },
         {
           "title": "Python",
-          "logo": "logos/python.png"
+          "logo": "python.png"
         },
         {
           "title": "Javascript",
-          "logo": "logos/javascript.png"
+          "logo": "javascript.png"
         },
         {
           "title": "C/C++",
-          "logo": "logos/cpp.png"
+          "logo": "cpp.png"
         },
         {
           "title": "SQL",
-          "logo": ""
+          "logo": "sql.jpg"
         }
       ]
     },
@@ -34,19 +34,19 @@
       "skills": [
         {
           "title": "Microsoft SQL Server",
-          "logo": ""
+          "logo": "mssql.jpg"
         },
         {
           "title": "MariaDB/MySQL",
-          "logo": ""
+          "logo": "mysql.png"
         },
         {
           "title": "Aurora",
-          "logo": ""
+          "logo": "amazon-aurora.png"
         },
         {
           "title": "Oracle",
-          "logo": ""
+          "logo": "oracle.png"
         }
       ]
     },
@@ -55,27 +55,27 @@
       "skills": [
         {
           "title": "git",
-          "logo": ""
+          "logo": "git.png"
         },
         {
           "title": "TFS",
-          "logo": ""
+          "logo": "tfs.png"
         },
         {
           "title": "SVN",
-          "logo": ""
+          "logo": "svn.png"
         },
         {
           "title": "Maven",
-          "logo": ""
+          "logo": "maven.png"
         },
         {
           "title": "Jenkins",
-          "logo": ""
+          "logo": "jenkins.png"
         },
         {
           "title": "Gradle",
-          "logo": ""
+          "logo": "gradle.png"
         }
       ]
     },
@@ -84,46 +84,46 @@
       "skills": [
         {
           "title": "Entity Framework",
-          "logo": ""
+          "logo": "entity-framework.png"
         },
         {
           "title": "django",
-          "logo": ""
+          "logo": "django.png"
         },
         {
           "title": "django REST framework",
-          "logo": ""
+          "logo": "drf.png"
         },
         {
           "title": "Vue.js",
-          "logo": ""
+          "logo": "vue.png"
         },
 
         {
           "title": "KnockoutJS",
-          "logo": ""
+          "logo": "knockout.png"
         },
 
         {
           "title": "jQuery",
-          "logo": ""
+          "logo": "jquery.gif"
         },
 
         {
           "title": "Bootstrap",
-          "logo": ""
+          "logo": "bootstrap.svg"
         },
         {
           "title": "Spring Framework",
-          "logo": ""
+          "logo": "spring-framework.png"
         },
         {
           "title": "Apache Solr",
-          "logo": ""
+          "logo": "apache-solr.png"
         },
         {
           "title": "MyBatis",
-          "logo": ""
+          "logo": "mybatis.png"
         }
       ]
     },
@@ -132,27 +132,23 @@
       "skills": [
         {
           "title": "Sharepoint",
-          "logo": ""
+          "logo": "sharepoint.png"
         },
         {
           "title": "SSRS",
-          "logo": ""
+          "logo": "ssrs.png"
         },
         {
           "title": "Linux/Unix",
-          "logo": ""
-        },
-        {
-          "title": "Agile",
-          "logo": ""
+          "logo": "linux.png"
         },
         {
           "title": "HTML",
-          "logo": ""
+          "logo": "html.png"
         },
         {
           "title": "CSS",
-          "logo": ""
+          "logo": "css.png"
         }
       ]
     }
