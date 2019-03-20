@@ -92,19 +92,27 @@
             <p class="card-header-title">{{category.name}}</p>
         </div>
         <div class="card-content">
-            <div class="columns">
+            <div class="columns is-vcentered is-centered is-multiline">
                 {% for skill in category.skills %}
-                <div class="column">
-                    <img src="{{contextRoot }}/img/logos/{{skill.logo}}" style="width: 48px;" />             
-                    <p>{{skill.title}}</p>
+                <div class="column has-text-centered">
+                    <figure>
+                        <img src="{{contextRoot }}/img/logos/{{skill.logo}}" style="width: 64px" />
+                        <figcaption>{{skill.title}}</figcaption>
+                    </figure>
                 </div>
+
+                {% if loop.index % 6 == 0 %}
+            </div>
+            <div class="columns is-vcentered is-centered is-multiline">
+                {% endif %}
                 {% endfor %}
             </div>
-            
+
         </div>
     </div>
     {% endfor %}
 </div>
+
 
 
 <!-- Start of Projects Div-->
