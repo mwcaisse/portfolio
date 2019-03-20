@@ -2,58 +2,64 @@
 
 {% block content %}
 
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#skills">Technical Skills</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav navbar-right">
-        <li>
-            <a class="nav-icon" href="https://github.com/mwcaisse" target="_blank">
-                <i class="fa fa-github fa-2x"></i>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="#">
+                Home
             </a>
-        </li>
-    </ul>
+            <a class="navbar-item" href="#about">
+                About
+            </a>
+            <a class="navbar-item" href="#experience">
+                Experience
+            </a>
+            <a class="navbar-item" href="#skills">
+                Technical Skills
+            </a>
+            <a class="navbar-item" href="#projects">
+                Projects
+            </a>
+            <a class="navbar-item" href="#contact">
+                Contact
+            </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="nav-icon" href="https://github.com/mwcaisse" target="_blank">
+                    <!-- TODO: Implment font awesome-->
+                    <i class="fa fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </nav>
 
-<div id="name" class="jumbotron">
+
+<div id="name">
     <div class="name-content">
         <h1>Mitchell Caisse</h1>
         <h2>Software Developer</h2>
-        <a class="btn-resume btn btn-outline-secondary" href="{{ contextRoot }}res/resume.pdf" target="_blank">Download Resume</a>
+        <a class="button button-is-primary" href="{{ contextRoot }}res/resume.pdf" target="_blank">Download Resume</a>
     </div>
 </div>
 
-<!-- Start of About Me Div -->
-<div id="about" class="black-container">
-    <div class="container">
-        <h3>About Me</h3>
-        <p>I am a motivated software developer with a penchant for creating intuitive user interfaces. 
-        That is not to say I don't know my way around a web service or database. 
+<a id="about" class="anchor"></a>
+<div class="container section">
+    <h3 class="title">
+        About Me
+    </h3>
+    <p>
+        I am a motivated software developer with a penchant for creating intuitive user interfaces.
+        That is not to say I don't know my way around a web service or database.
         I am a quick learner who thrives when thrown into situations with new and unfamiliar technologies and libraries.
-        I can often be found in a dark room coding, if I'm not I am likely cycling, driving, or bothering friends or family.</p>
-    </div>
+        I can often be found in a dark room coding, if I'm not I am likely cycling, driving, or bothering friends or family.
+    </p>
+
 </div>
-<!-- End of About Me Div-->
 
-
-<div class="container">
+<a id="experience" class="anchor"></a>
+<div class="container section">
     <h3 class="title">
         Experience
     </h3>
@@ -83,6 +89,7 @@
     {% endfor %}
 </div>
 
+<a id="skills" class="anchor"></a>
 <div class="container">
     <h3 class="title">Skills</h3>
 
@@ -113,13 +120,11 @@
     {% endfor %}
 </div>
 
-
-
-<!-- Start of Projects Div-->
-
-<div id="projects" class="container">
-    <h3>Projects</h3>
-     
+<a id="projects" class="anchor"></a>
+<div class="container">
+    <h3 class="title">
+        Projects
+    </h3>     
     <div class="row">
 
         {% for project in projects %}
@@ -150,9 +155,10 @@
     </div>
     <!-- End of Projects Div-->
 
+    <a id="contact" class="anchor"></a>
     <div id="contact" class="black-container">
         <div class="container">
-            <h3>Contact</h3>
+            <h3 class="title">Contact</h3>
             
             <div class="row">
                 <div id="contact-icon" class="col">

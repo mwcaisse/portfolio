@@ -1,27 +1,17 @@
 /** new styles */
 
+.anchor {
+    top: -3.25rem;
+    display: block;
+    visibility: hidden;
+    position: relative;
+}
+
+.section {
+    padding-top: 30px;
+}
+
 /* old styles */
-
-.nav-link {
-    color: rgba(255, 255, 255, .5);
-}
-
-    .nav-link:hover {
-        color: rgba(255, 255, 255, .75);
-    }
-
-    .nav-link.active {
-        background-color: inherit !important
-    }
-
-
-a.nav-icon {
-    color: rgba(255, 255, 255, .5);
-}
-
-    a.nav-icon:hover {
-        color: rgba(255, 255, 255, .75);
-    }
 
 
 .header {
@@ -62,29 +52,6 @@ a.nav-icon {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
-.btn-resume {
-    border-width: 3px;
-    border-color: rgba(255, 255, 255, .5);
-    color: inherit;
-}
-
-    .btn-resume:hover {
-        background: rgba(255, 255, 255, 1);
-        border-color: rgba(255, 255, 255, 1);
-        color: inherit;
-    }
-
-    .btn-resume:visited {
-        color: inherit;
-    }
-
-#about {
-    padding-top: 30px;
-    padding-bottom: 15px;
-}
-
-   
 
 #projects {
     padding-top: 30px;
