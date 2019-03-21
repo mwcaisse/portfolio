@@ -11,6 +11,53 @@
     padding-top: 30px;
 }
 
+/** add a 1/6 column width */
+.columns.is-mobile > .column.is-one-sixth {
+    flex: none;
+    width: 16.6666%;
+}
+
+@media screen and (max-width: 768px) {
+    .column.is-one-sixth-mobile {
+        flex: none;
+        width: 16.6666%;
+    }
+}
+@media screen and (min-width: 769px), print {
+    .column.is-one-sixth, .column.is-one-sixth-tablet {
+        flex: none;
+        width: 16.6666%;
+    }
+}
+
+@media screen and (max-width: 1087px) {
+    .column.is-one-sixth-touch {
+        flex: none;
+        width: 16.6666%;
+    }
+}
+
+@media screen and (min-width: 1088px) {
+    .column.is-one-sixth-desktop {
+        flex: none;
+        width: 16.6666%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .column.is-one-sixth-widescreen {
+        flex: none;
+        width: 16.6666%;
+    }
+}
+
+@media screen and (min-width: 1472px) {
+    .column.is-one-sixth-fullhd {
+        flex: none;
+        width: 16.6666%;
+    }
+}
+
 /* old styles */
 
 
@@ -32,17 +79,17 @@
     border-radius: 0;
 }
 
-#name h1 {
-    text-transform: uppercase;
-    font-size: 5em;
-    font-weight: 900;
-}
+    #name h1 {
+        text-transform: uppercase;
+        font-size: 5em;
+        font-weight: 900;
+    }
 
-#name h2 {
-    font-weight: 500;
-    font-size: 2.25em;
-    margin-bottom: 30px;
-}
+    #name h2 {
+        font-weight: 500;
+        font-size: 2.25em;
+        margin-bottom: 30px;
+    }
 
 .name-content {
     position: absolute;
@@ -58,10 +105,10 @@
     padding-bottom: 15px;
 }
 
-#projects .row {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
+    #projects .row {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
 .project-info {
     opacity: 0;
@@ -75,12 +122,13 @@
     border-radius: 0.25rem;
     color: #fff;
     margin: 0 15px;
-    transition: 0.5s all ease;            
+    transition: 0.5s all ease;
 }
 
-.project-info:hover {
-    opacity: 1;
-}
+    .project-info:hover {
+        opacity: 1;
+    }
+
 .project-text {
     position: absolute;
     padding: 10px;

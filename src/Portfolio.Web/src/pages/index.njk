@@ -101,17 +101,12 @@
         <div class="card-content">
             <div class="columns is-vcentered is-centered is-multiline">
                 {% for skill in category.skills %}
-                <div class="column has-text-centered">
+                <div class="column is-one-sixth is-one-fourth-mobile has-text-centered">
                     <figure>
                         <img src="{{contextRoot }}/img/logos/{{skill.logo}}" style="width: 64px" />
                         <figcaption>{{skill.title}}</figcaption>
                     </figure>
-                </div>
-
-                {% if loop.index % 6 == 0 %}
-            </div>
-            <div class="columns is-vcentered is-centered is-multiline">
-                {% endif %}
+                </div>  
                 {% endfor %}
             </div>
 
