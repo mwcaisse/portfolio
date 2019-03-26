@@ -315,12 +315,12 @@
   "projects": [
     {
       "name": "PyDeployer",
-      "description": "Automated Deployer",
+      "description": "Automated deloyment and release tool",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
       "link": "projects/cartracker.html",
       "details": [
         "Backend written in Python and C#",
-        "Frontend in Javascript and Bulma",
+        "Frontend in Javascript and Vue",
         "Easily build, package, and deploy software across different servers/environments",
         "This site was deployed using it"
       ],
@@ -335,7 +335,7 @@
       "thumbnail": "img/project_thumbs/cartracker.jpg",
       "link": "projects/cartracker.html",
       "details": [
-        "Written in C# and Javascript",
+        "Written in C# and Javascript/Vue",
         "Blog posts are written and rendered in Markdown"
       ],
       "github": [
@@ -344,7 +344,7 @@
     },
     {
       "name": "Car Tracker",
-      "description": "Web + Android Application",
+      "description": "Car telematics and location tracking",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
       "link": "projects/cartracker.html",
       "details": [
@@ -358,11 +358,11 @@
     },
     {
       "name": "mwcaisse.com",
-      "description": "Web Design",
+      "description": "Personal portfolio website (this site)",
       "thumbnail": "img/project_thumbs/mwcaisse.jpg",
       "link": "projects/mwcaisse.html",
       "details": [
-        "Test Detail"
+        "Experiment with new technologies and web design"
       ],
       "github": [
         "https://github.com/mwcaisse/portfolio"
@@ -370,11 +370,11 @@
     },
     {
       "name": "Show Reminder",
-      "description": "Web Application",
+      "description": "Tracks the air date of my favorite shows",
       "thumbnail": "img/project_thumbs/showreminder.jpg",
       "link": "projects/showreminder.html",
       "details": [
-        "Test Detail"
+        "Project to learn basics of Angular 2"
       ],
       "github": [
         "https://github.com/mwcaisse/ShowReminder"
