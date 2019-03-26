@@ -133,6 +133,23 @@
                 <div class="card-content">
                     <p class="title is-4">{{ project.name }}</p>
                     <p>{{ project.description }}</p>
+                    <div style="display: none;">
+                        <p class="title is-4">Details</p>
+                        <div class="content">
+                            <ul>
+                                {% for detail in project.details %}
+                                <li>{{ detail }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    {% for github in project.github %}
+                    <a class="card-footer-item" href="{{ github }}">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

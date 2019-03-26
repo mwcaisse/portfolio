@@ -317,31 +317,68 @@
       "name": "PyDeployer",
       "description": "Automated Deployer",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/cartracker.html",
+      "details": [
+        "Backend written in Python and C#",
+        "Frontend in Javascript and Bulma",
+        "Easily build, package, and deploy software across different servers/environments",
+        "This site was deployed using it"
+      ],
+      "github": [
+        "https://github.com/mwcaisse/pydeployer",
+        "https://github.com/mwcaisse/pydeployer-web"
+      ]
     },
     {
       "name": "CrabZinc",
       "description": "Blogging Platform",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/cartracker.html",
+      "details": [
+        "Written in C# and Javascript",
+        "Blog posts are written and rendered in Markdown"
+      ],
+      "github": [
+        "https://github.com/mwcaisse/crab-zinc"
+      ]
     },
     {
       "name": "Car Tracker",
       "description": "Web + Android Application",
       "thumbnail": "img/project_thumbs/cartracker.jpg",
-      "link": "projects/cartracker.html"
+      "link": "projects/cartracker.html",
+      "details": [
+        "Written in C#, Javascript, Java",
+        "Android application using OBDII and Bluetooth to collect vehicle data"
+      ],
+      "github": [
+        "https://github.com/mwcaisse/car-tracker-server",
+        "https://github.com/mwcaisse/car-tracker-android"
+      ]
     },
     {
       "name": "mwcaisse.com",
       "description": "Web Design",
       "thumbnail": "img/project_thumbs/mwcaisse.jpg",
-      "link": "projects/mwcaisse.html"
+      "link": "projects/mwcaisse.html",
+      "details": [
+        "Test Detail"
+      ],
+      "github": [
+        "https://github.com/mwcaisse/portfolio"
+      ]
     },
     {
       "name": "Show Reminder",
       "description": "Web Application",
       "thumbnail": "img/project_thumbs/showreminder.jpg",
-      "link": "projects/showreminder.html"
+      "link": "projects/showreminder.html",
+      "details": [
+        "Test Detail"
+      ],
+      "github": [
+        "https://github.com/mwcaisse/ShowReminder"
+      ]
     }
 
   ]
