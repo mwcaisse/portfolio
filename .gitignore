@@ -40,6 +40,7 @@ Thumbs.db
 data-source.xml
 authentication.json
 dbConfig.json
+settings.json
 
 # Misc stuff #
 ##############
