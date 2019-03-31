@@ -160,60 +160,43 @@
 <!-- End of Projects Div-->
 
 <a id="contact" class="anchor"></a>
-<div id="contact" class="black-container">
-    <div class="container">
-        <h3 class="title">Contact</h3>
-            
-        <div class="row">
-            <div id="contact-icon" class="col">
-                <i class="fa fa-envelope"></i>
+<div class="container">
+    <h3 class="title">
+        Contact
+    </h3>
+
+    <div class="columns">
+        <div class="column">
+            <i class="fas fa-envelope fa-5x contact-icon"></i>
+        </div>
+        <div class="column">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Enter your name" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
             </div>
-            <div class="col">
-                <form id="formContact">
-                    <div class="form-group" data-bind="css: {'has-danger': $data.Name.ShowError}">
-                        <label for="inputName">Name</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Enter name"
-                                data-bind="textInput: $data.Name,
-                                    css: {'form-control-danger': $data.Name.ShowError}" />
-                        <div class="form-control-feedback"
-                                data-bind="text: $data.Name.ValidationMessage,
-                                visible: $data.Name.ShowError"></div>
-                    </div>
 
-                    <div class="form-group" data-bind="css: {'has-danger': $data.Email.ShowError}">
-                        <label for="inputEmail">Email</label>
-                        <input type="text" class="form-control form-control-danger" id="inputEmail" placeholder="Enter email"
-                                data-bind="textInput: $data.Email, ,
-                                    css: {'form-control-danger': $data.Email.ShowError}" />
-                        <div class="form-control-feedback"
-                                data-bind="text: $data.Email.ValidationMessage,
-                                visible: $data.Email.ShowError"></div>
-                    </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="email" placeholder="Enter your email" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
 
-                    <div class="form-group" data-bind="css: {'has-danger': $data.Message.ShowError}">
-                        <label for="inputMessage">Message</label>
-                        <textarea class="form-control form-control-danger" id="inputMessage" rows="5"
-                                    data-bind="textInput: $data.Message,
-                                        css: {'form-control-danger': $data.Message.ShowError}"></textarea>
-                        <div class="form-control-feedback"
-                                data-bind="text: $data.Message.ValidationMessage,
-                                visible: $data.Message.ShowError"></div>
-                    </div>
-
-                    <button type="button" class="btn btn-primary" data-bind="click: $data.Send">Send</button>
-
-                    <div data-bind="with: $data.Alert" style="padding-top: 15px;">
-                        <div class="alert" data-bind="visible: $data.Show, css: $data.Type" style="display: none">
-                            <button type="button" class="close" data-bind="click: $data.Hide"><span aria-hidden="true">&times;</span></button>
-                            <strong data-bind="visible: $data.HasBoldText, text: $data.BoldText"></strong>&nbsp;<span data-bind="text: $data.Message">This is the alert message!</span>
-                        </div>
-                    </div>
-
-                </form>
+            <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                    <textarea class="textarea"></textarea>
+                </div>
             </div>
         </div>
-
-            
 
     </div>
 </div>

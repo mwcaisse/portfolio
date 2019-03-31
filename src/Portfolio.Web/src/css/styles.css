@@ -59,16 +59,19 @@
 }
 
 i.icon, i.action-icon {
-    color: black;
+    color: #4a4a4a;
 }
 
     i.action-icon:hover {
         color: #3273dc
     }
 
+i.contact-icon {
+    font-size: 23rem;
+}
+
+
 /* old styles */
-
-
 .header {
     padding-top: 25px;
     padding-left: 50px;
