@@ -77,6 +77,10 @@ i.contact-icon {
     font-size: 23rem;
 }
 
+.footer {
+    padding-bottom: 2rem;
+}
+
 
 /* old styles */
 .header {
@@ -166,27 +170,6 @@ i.contact-icon {
     text-align: center;
     line-height: 100%;
 }
-
-#footer-right li {
-    display: inline-block;
-}
-
-.footer {
-    padding: 30px;
-    width: 100%;
-    background-color: #292b2c;
-    color: rgba(255, 255, 255, .5);
-}
-
-    .footer a {
-        color: rgba(255, 255, 255, .5);
-    }
-
-        .footer a:hover {
-            color: rgba(255, 255, 255, .75);
-        }
-
-
 
 /** Projects Page */
 .project-name {
