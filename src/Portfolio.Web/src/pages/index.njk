@@ -169,11 +169,11 @@
         <div class="column">
             <i class="fas fa-envelope fa-5x contact-icon"></i>
         </div>
-        <div class="column">
+        <div class="column" id="contact-form">
             <div class="field">
                 <label class="label">Name</label>
                 <div class="control has-icons-left">
-                    <input class="input" type="text" placeholder="Enter your name" />
+                    <input class="input" type="text" placeholder="Enter your name" v-model="name"/>
                     <span class="icon is-small is-left">
                         <i class="fas fa-user"></i>
                     </span>
@@ -183,7 +183,7 @@
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                    <input class="input" type="email" placeholder="Enter your email" />
+                    <input class="input" type="email" placeholder="Enter your email" v-model="email"/>
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -193,7 +193,16 @@
             <div class="field">
                 <label class="label">Message</label>
                 <div class="control">
-                    <textarea class="textarea"></textarea>
+                    <textarea class="textarea" v-model="message"></textarea>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link" type="button" v-on:click="send">Send</button>
+                </div>
+                <div class="control">
+                    <button class="button is-link" type="button" v-on:click="clear">Clear</button>
                 </div>
             </div>
         </div>
@@ -201,12 +210,10 @@
     </div>
 </div>
 
-
-
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>    
-    <script type="text/javascript" src="{{ contextRoot }}js/contactViewModel.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ contextRoot }}lib/vue/js/vue.min.js"></script>
+    <script type="text/javascript" src="{{ contextRoot }}js/contactView.js"></script>
 {% endblock %}

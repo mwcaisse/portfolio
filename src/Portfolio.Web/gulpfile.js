@@ -23,12 +23,6 @@ gulp.task('default', function () {
     // place code for your default task here
 });
 
-gulp.task('restore:bootstrap', function () {
-    return gulp.src([
-        'node_modules/bootstrap/dist/**/*.*'
-    ]).pipe(gulp.dest(libs + 'bootstrap'));
-});
-
 gulp.task('restore:font-awesome', function () {
     var css = gulp.src([
         'node_modules/@fortawesome/fontawesome-free/css/*.*'
@@ -47,11 +41,18 @@ gulp.task("restore:bulma", function () {
     ]).pipe(gulp.dest(libs + "bulma/css"));
 });
 
+gulp.task("restore:vue",
+    function() {
+        return gulp.src([
+            "node_modules/vue/dist/vue.js",
+            "node_modules/vue/dist/vue.min.js"
+        ]).pipe(gulp.dest(libs + "vue/js"));
+    });
 
 gulp.task('restore', [
-    'restore:bootstrap',
-    'restore:font-awesome',
-    "restore:bulma"
+    "restore:bulma",
+    "restore:vue",
+    "restore:font-awesome"
 ]);
 
 function getDataForFile(file) {
