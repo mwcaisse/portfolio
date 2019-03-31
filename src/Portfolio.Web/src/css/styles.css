@@ -66,6 +66,13 @@ i.icon, i.action-icon {
         color: #3273dc
     }
 
+a.project-github-link {
+    color: #4a4a4a;
+}
+    a.project-github-link:hover {
+        color: #3273dc;
+    }
+
 i.contact-icon {
     font-size: 23rem;
 }

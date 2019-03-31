@@ -90,8 +90,7 @@ gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
 });
 
 gulp.task("nunjucks:stage", [
-    "nunjucks:stage:other",
-    "nunjucks:stage:projects"
+    "nunjucks:stage:other"
 ]);
 
 gulp.task("nunjucks:stage:other", function() {
