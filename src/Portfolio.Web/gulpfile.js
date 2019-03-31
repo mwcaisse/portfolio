@@ -31,12 +31,12 @@ gulp.task('restore:bootstrap', function () {
 
 gulp.task('restore:font-awesome', function () {
     var css = gulp.src([
-        'node_modules/font-awesome/css/*.*'
+        'node_modules/@fortawesome/fontawesome-free/css/*.*'
     ]).pipe(gulp.dest(libs + 'font-awesome/css'));
 
     var other = gulp.src([
-        'node_modules/font-awesome/fonts/*.*'
-    ]).pipe(gulp.dest(libs + 'font-awesome/fonts'));
+        'node_modules/@fortawesome/fontawesome-free/webfonts/*.*'
+    ]).pipe(gulp.dest(libs + 'font-awesome/webfonts'));
 
     return merge(css, other);
 });

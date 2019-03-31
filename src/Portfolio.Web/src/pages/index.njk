@@ -28,7 +28,7 @@
             <div class="navbar-item">
                 <a class="nav-icon" href="https://github.com/mwcaisse" target="_blank">
                     <!-- TODO: Implment font awesome-->
-                    <i class="fa fa-github fa-2x"></i>
+                    <i class="fab fa-github fa-2x action-icon"></i>
                 </a>
             </div>
         </div>
@@ -132,7 +132,7 @@
                 </div>
                 <div class="card-content">
                     <p class="title is-4">{{ project.name }}</p>
-                    <p>{{ project.description }}</p>
+                    <p style="height:2rem;">{{ project.description }}</p>
                     <div style="display: none;">
                         <p class="title is-4">Details</p>
                         <div class="content">
@@ -147,7 +147,7 @@
                 <div class="card-footer">
                     {% for github in project.github %}
                     <a class="card-footer-item" href="{{ github }}">
-                        <i class="fa fa-github fa-2x"></i>
+                        <i class="fab fa-github fa-2x action-icon"></i>
                     </a>
                     {% endfor %}
                 </div>

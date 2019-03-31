@@ -58,6 +58,14 @@
     }
 }
 
+i.icon, i.action-icon {
+    color: black;
+}
+
+    i.action-icon:hover {
+        color: #3273dc
+    }
+
 /* old styles */
 
 
