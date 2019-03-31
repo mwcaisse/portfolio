@@ -41,6 +41,7 @@ data-source.xml
 authentication.json
 dbConfig.json
 settings.json
+gmail_credentials.json
 
 # Misc stuff #
 ##############
