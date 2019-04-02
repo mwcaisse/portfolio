@@ -3,28 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Portfolio.Web", "src\Portfolio.Web\", "{AD9127BC-D6EF-4CE7-92C9-4994FACE634E}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Portfolio.Web", "Portfolio\Portfolio.Web\", "{AD9127BC-D6EF-4CE7-92C9-4994FACE634E}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53509"
-		Debug.AspNetCompiler.PhysicalPath = "src\Portfolio.Web\"
+		Debug.AspNetCompiler.PhysicalPath = "Portfolio\Portfolio.Web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53509\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_53509"
-		Release.AspNetCompiler.PhysicalPath = "src\Portfolio.Web\"
+		Release.AspNetCompiler.PhysicalPath = "Portfolio\Portfolio.Web\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53509\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "53509"
-		SlnRelativePath = "src\Portfolio.Web\"
+		SlnRelativePath = "Portfolio\Portfolio.Web\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.API", "src\Portfolio.API\Portfolio.API.csproj", "{A84941AD-D2CA-4D2B-998B-074DD6DC0FD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.API", "Portfolio\Portfolio.API\Portfolio.API.csproj", "{A84941AD-D2CA-4D2B-998B-074DD6DC0FD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

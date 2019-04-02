@@ -1,0 +1,12 @@
+name: Portfolio
+uuid: 1b8614f0-2f65-4d9f-b174-9472b12a6865
+subProjects:
+    - name: Portfolio.API
+      type: web
+      packagemanager: yarn
+      webpack: false
+      serviceName: portfolio
+    - name: Portfolio.Web
+      type: web
+      packagemanager: yarn
+      webpack: false
