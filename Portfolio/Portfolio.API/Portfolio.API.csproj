@@ -13,4 +13,10 @@
     <PackageReference Include="Sendgrid" Version="9.10.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="settings.json.ptd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
