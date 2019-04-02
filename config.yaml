@@ -6,7 +6,7 @@ subProjects:
       webpack: false
       serviceName: portfolio
     - name: Portfolio.Web
-      type: static-web
+      type: web-static
       packageManager: yarn
       webpack: false
       gulpCommand: dist
