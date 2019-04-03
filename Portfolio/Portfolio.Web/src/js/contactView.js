@@ -1,4 +1,4 @@
-﻿var apiRoot = $("#apiRoot").val();
+﻿var apiRoot = "";
 
 var contactApp = new Vue({
     el: "#contact-form",
@@ -37,7 +37,5 @@ var contactApp = new Vue({
 });
 
 $(document).ready(function () {
-    //load in the API Root from the page
-    //apiRoot = $("#apiRoot").val();
-
+    apiRoot = $("#apiRoot").val();
 });
