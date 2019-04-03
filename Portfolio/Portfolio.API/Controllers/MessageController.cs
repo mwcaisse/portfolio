@@ -16,7 +16,7 @@ using SendGrid.Helpers.Mail;
 namespace Portfolio.API.Controllers
 {
     [Produces("application/json")]
-    [Route("api/message")]
+    [Route("message")]
     public class MessageController : Controller
     {
         private readonly ApplicationConfiguration _applicationConfiguration;
