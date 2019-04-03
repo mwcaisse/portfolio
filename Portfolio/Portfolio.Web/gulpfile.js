@@ -86,6 +86,9 @@ gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
             path: ["src/templates"],
             manageEnv: manageNunjucksEnvironment
         }))
+        .pipe(gulpRename({
+            extname: ".html.ptd"
+        }))
         .pipe(gulp.dest(dist + "/"));
 });
 
@@ -160,14 +163,7 @@ gulp.task('dist:res',
             "src/res/**/*"
         ]).pipe(gulp.dest(dist + "/res"));
     }
-)
-
-gulp.task('dist:html', ['nunjucks:render'],
-    function () {
-        return gulp.src([
-            "src/**/*.html"
-        ]).pipe(gulp.dest(dist + "/"));
-    });
+);
 
 gulp.task('dist:lib', ['restore'], 
     function () {
@@ -179,7 +175,8 @@ gulp.task('dist:lib', ['restore'],
 gulp.task('dist-local',
     ['dist'],
     function() {
-        return gulp.src(dist + "/**/*").pipe(gulp.dest(distLocal));
+        return gulp.src(dist + "/**/*")
+            .pipe(gulp.dest(distLocal));
     });
 
 gulp.task("dist-local:clean",

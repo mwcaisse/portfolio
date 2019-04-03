@@ -1,4 +1,4 @@
-﻿var apiRoot = "http://localhost:14262/api/";
+﻿var apiRoot = $("#apiRoot").val();
 
 var contactApp = new Vue({
     el: "#contact-form",
