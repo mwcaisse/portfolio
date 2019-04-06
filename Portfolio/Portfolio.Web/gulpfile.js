@@ -11,13 +11,19 @@ var gulpData = require("gulp-data");
 var gulpRename = require("gulp-rename");
 var merge = require("merge-stream");
 var path = require("path");
-var environments = require("gulp-environments");
+
+var tokenReplacer = require("./util/gulp-token-replacer");
 
 var libs = './src/lib/';
 var dist = './dist/';
 var stage = "./dist-stage/";
 var distLocal = './dist-local/portfolio';
 var nunjucksStage = stage + "/nunjucks/";
+
+var tokens = {
+    api_root: "http://localhost:14262/",
+    context_root: "/"
+};
 
 gulp.task('default', function () {
     // place code for your default task here
@@ -64,16 +70,6 @@ function getDataForFile(file) {
     }
 }
 
-function manageNunjucksEnvironment(env) {
-    if (environments.production()) {
-        env.addGlobal("contextRoot", "/");
-        env.addGlobal("apiRoot", "https://mwcaisse.com/api/");
-    } else {
-        env.addGlobal("contextRoot", "/portfolio/");
-        env.addGlobal("apiRoot", "http://localhost:54248/api/");
-    }
-}
-
 gulp.task('nunjucks', [
     "nunjucks:stage",
     "nunjucks:render"
@@ -83,8 +79,7 @@ gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
     return gulp.src(nunjucksStage + "/**/*.+(html|njk)")
         .pipe(gulpData(getDataForFile))
         .pipe(nunjucksRender({
-            path: ["src/templates"],
-            manageEnv: manageNunjucksEnvironment
+            path: ["src/templates"]
         }))
         .pipe(gulpRename({
             extname: ".html.ptd"
@@ -172,12 +167,34 @@ gulp.task('dist:lib', ['restore'],
         ]).pipe(gulp.dest(dist + "/lib"));
     });
 
-gulp.task('dist-local',
-    ['dist'],
+gulp.task("dist-local::copy-dist",
+    ["dist"],
     function() {
         return gulp.src(dist + "/**/*")
             .pipe(gulp.dest(distLocal));
     });
+
+gulp.task("dist-local::replace-tokens", ["dist-local::copy-dist"],
+    function () {
+        console.log("replce tokens task has been called");
+        return gulp.src(distLocal + "/**/*.ptd")
+            .pipe(gulpClean())
+            .pipe(tokenReplacer(tokens))
+            .pipe(gulpRename(function(path) {
+                path.extname = path.extname.replace(".ptd", ""); // remove the ptd extension from the files
+            }))
+            .pipe(gulp.dest(distLocal));
+    });
+/*
+gulp.task("dist-local::clean-ptd-files", function() {
+    return del
+})*/
+
+gulp.task('dist-local',
+    ['dist',
+    "dist-local::copy-dist",
+    "dist-local::replace-tokens"]
+);
 
 gulp.task("dist-local:clean",
     function () {

@@ -5,22 +5,22 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="{{ contextRoot }}">Home</a>
+            <a class="nav-link" href="[[context_root]]">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ contextRoot }}#about">About</a>
+            <a class="nav-link" href="[[context_root]]#about">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ contextRoot }}#skills">Technical Skills</a>
+            <a class="nav-link" href="[[context_root]]#skills">Technical Skills</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ contextRoot }}#experience">Experience</a>
+            <a class="nav-link" href="[[context_root]]#experience">Experience</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="{{ contextRoot }}#projects">Projects</a>
+            <a class="nav-link active" href="[[context_root]]#projects">Projects</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ contextRoot }}#contact">Contact</a>
+            <a class="nav-link" href="[[context_root]]#contact">Contact</a>
         </li>
     </ul>
     <ul class="navbar-nav navbar-right">
@@ -64,7 +64,7 @@
 
     {% for image in images %}
     <div class="row">
-        <img src="{{ contextRoot }}{{ image }}" />
+        <img src="[[context_root]]{{ image }}" />
     </div>
     {% endfor %}
 </div>

@@ -40,7 +40,7 @@
     <div class="name-content">
         <h1>Mitchell Caisse</h1>
         <h2>Software Developer</h2>
-        <a class="button button-is-primary" href="{{ contextRoot }}res/resume.pdf" target="_blank">Download Resume</a>
+        <a class="button button-is-primary" href="[[context_root]]res/resume.pdf" target="_blank">Download Resume</a>
     </div>
 </div>
 
@@ -103,7 +103,7 @@
                 {% for skill in category.skills %}
                 <div class="column is-one-sixth is-one-quarter-mobile has-text-centered">
                     <figure>
-                        <img src="{{contextRoot }}/img/logos/{{skill.logo}}" style="width: 64px" />
+                        <img src="[[context_root]]/img/logos/{{skill.logo}}" style="width: 64px" />
                         <figcaption>{{skill.title}}</figcaption>
                     </figure>
                 </div>  
@@ -127,7 +127,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image">
-                        <img src="{{ contextRoot }}{{ project.thumbnail }}" />
+                        <img src="[[context_root]]{{ project.thumbnail }}" />
                     </figure>
                 </div>
                 <div class="card-content">
@@ -214,6 +214,6 @@
 
 {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ contextRoot }}lib/vue/js/vue.min.js"></script>
-    <script type="text/javascript" src="{{ contextRoot }}js/contactView.js"></script>
+    <script type="text/javascript" src="[[context_root]]lib/vue/js/vue.min.js"></script>
+    <script type="text/javascript" src="[[context_root]]js/contactView.js"></script>
 {% endblock %}

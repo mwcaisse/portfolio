@@ -10,7 +10,9 @@
     "gulp-environments": "0.1.2",
     "gulp-nunjucks-render": "2.0.0",
     "gulp-rename": "1.2.2",
-    "merge-stream": "1.0.1"
+    "merge-stream": "1.0.1",
+    "replacestream": "4.0.3",
+    "through2":  "3.0.1" 
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
