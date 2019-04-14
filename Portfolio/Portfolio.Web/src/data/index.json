@@ -156,7 +156,7 @@
   "companies": [
     {
       "name": "Insurify",
-      "title": "Lead Integration Developer",
+      "title": "Lead Integration Developer & Lead DevOps Engineer",
       "dates": [
         {
           "start": "December 2017",
@@ -164,10 +164,10 @@
         }
       ],
       "points": [
-        "Oversaw the development of all integrations, handled communication with partners, and defined requirements.",
-        "Lead the development of a key inititive to bring payments onto the site and reach PCI compliance.",
-        "Enhanced the protection of our customer data by improving encryption practices.",
-        "Quickly learned Python/Django and created a RESTFul backend for a new vertical."
+        "Desigend and implemented infastructure to improve scalability and reliability of our application. Automated the configuration of servers.",
+        "Oversaw the development and architecture of all integrations, handled communication with partners, and defined requirements.",
+        "Lead developer of a project to collect payments on our site. Developed a PCI DSS compliant API to process payments. Implemented a scalable and PCI DSS compliant production environment", 
+        "Enhanced the protection of our customer data by improving encryption practices and utilizing a KMS"        
       ],
       "skills": [
         "Python",
@@ -179,7 +179,10 @@
         "Git",
         "JIRA",
         "AWS",
-        "AWS KMS"
+        "AWS KMS",
+        "AWS EC2",
+        "AWS S3",
+        "AWS ALB"
       ]
     },
     {
