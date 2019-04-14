@@ -164,7 +164,7 @@
         }
       ],
       "points": [
-        "Desigend and implemented infastructure to improve scalability and reliability of our application. Automated the configuration of servers.",
+        "Desigend and implemented infastructure to improve scalability, reliability, and security of our application. Automated the configuration of servers.",
         "Oversaw the development and architecture of all integrations, handled communication with partners, and defined requirements.",
         "Lead developer of a project to collect payments on our site. Developed a PCI DSS compliant API to process payments. Implemented a scalable and PCI DSS compliant production environment", 
         "Enhanced the protection of our customer data by improving encryption practices and utilizing a KMS"        
