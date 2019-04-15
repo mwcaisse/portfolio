@@ -178,11 +178,7 @@
         "Jenkins",
         "Git",
         "JIRA",
-        "AWS",
-        "AWS KMS",
-        "AWS EC2",
-        "AWS S3",
-        "AWS ALB"
+        "AWS"
       ]
     },
     {
