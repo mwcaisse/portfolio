@@ -12,11 +12,11 @@
     "merge-stream": "2.0.0",
     "replacestream": "4.0.3",
     "through2":  "3.0.1",
-    "del": "^5.1.0"
+    "del": "^5.1.0",
+    "lodash": "4.17.15"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
-    "bootstrap": "4.0.0-alpha.6",
     "bulma": "^0.7.2",
     "vue": "2.6.10"
   },
