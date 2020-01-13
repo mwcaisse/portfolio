@@ -155,12 +155,32 @@
   ], 
   "companies": [
     {
+      "name": "Kessel Run",
+      "title": "Senior Software Engineer",
+      "dates": [
+        {
+          "start": "September 2019",
+          "end": "Present"
+        }
+      ],
+      "points": [
+      ],
+      "skills": [
+        "Java",
+        "Spring Framework",
+        "SQL",
+        "PostgreSQL",
+        "Concourse CI",
+        "Git"
+      ]
+    },
+    {
       "name": "Insurify",
       "title": "Lead Integration Developer & Lead DevOps Engineer",
       "dates": [
         {
           "start": "December 2017",
-          "end": "Present"
+          "end": "September 2019"
         }
       ],
       "points": [
