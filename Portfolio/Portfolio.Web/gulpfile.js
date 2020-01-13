@@ -6,60 +6,52 @@ Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 
 var gulp = require('gulp');
 var nunjucksRender = require("gulp-nunjucks-render");
-var gulpClean = require("gulp-clean");
 var gulpData = require("gulp-data");
 var gulpRename = require("gulp-rename");
 var merge = require("merge-stream");
-var path = require("path");
+var del = require("del");
 
 var tokenReplacer = require("./util/gulp-token-replacer");
 
-var libs = './src/lib/';
-var dist = './dist/';
-var stage = "./dist-stage/";
-var distLocal = './dist-local/portfolio';
-var nunjucksStage = stage + "/nunjucks/";
+
+const dir = {
+    libs: './src/lib/',
+    dist: "./dist/",
+    stage: "./dist-stage/",
+    dist_local: "./dist-local",
+    nunjucks_stage: "./dist-stage/nunjucks/"
+};
+
 
 var tokens = {
     api_root: "http://localhost:14262/",
     context_root: "/"
 };
 
-gulp.task('default', function () {
-    // place code for your default task here
-});
-
-gulp.task('restore:font-awesome', function () {
+function restoreFontAwesome() {
     var css = gulp.src([
         'node_modules/@fortawesome/fontawesome-free/css/*.*'
-    ]).pipe(gulp.dest(libs + 'font-awesome/css'));
+    ]).pipe(gulp.dest(dir.libs + 'font-awesome/css'));
 
     var other = gulp.src([
         'node_modules/@fortawesome/fontawesome-free/webfonts/*.*'
-    ]).pipe(gulp.dest(libs + 'font-awesome/webfonts'));
+    ]).pipe(gulp.dest(dir.libs + 'font-awesome/webfonts'));
 
     return merge(css, other);
-});
+}
 
-gulp.task("restore:bulma", function () {
+function restoreBulma() {
     return gulp.src([
         "node_modules/bulma/css/*.*"
-    ]).pipe(gulp.dest(libs + "bulma/css"));
-});
+    ]).pipe(gulp.dest(dir.libs + "bulma/css"));
+}
 
-gulp.task("restore:vue",
-    function() {
-        return gulp.src([
-            "node_modules/vue/dist/vue.js",
-            "node_modules/vue/dist/vue.min.js"
-        ]).pipe(gulp.dest(libs + "vue/js"));
-    });
-
-gulp.task('restore', [
-    "restore:bulma",
-    "restore:vue",
-    "restore:font-awesome"
-]);
+function restoreVue() {
+    return gulp.src([
+        "node_modules/vue/dist/vue.js",
+        "node_modules/vue/dist/vue.min.js"
+    ]).pipe(gulp.dest(dir.libs + "vue/js"));
+}
 
 function getDataForFile(file) {
     var fileName = file.relative.replace(".njk", ".json");
@@ -69,14 +61,8 @@ function getDataForFile(file) {
         return {};
     }
 }
-
-gulp.task('nunjucks', [
-    "nunjucks:stage",
-    "nunjucks:render"
-]);
-
-gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
-    return gulp.src(nunjucksStage + "/**/*.+(html|njk)")
+function taskNunjucksRender() {
+    return gulp.src(dir.nunjucks_stage + "/**/*.+(html|njk)")
         .pipe(gulpData(getDataForFile))
         .pipe(nunjucksRender({
             path: ["src/templates"]
@@ -84,19 +70,15 @@ gulp.task('nunjucks:render', ["nunjucks:stage"], function () {
         .pipe(gulpRename({
             extname: ".html.ptd"
         }))
-        .pipe(gulp.dest(dist + "/"));
-});
+        .pipe(gulp.dest(dir.dist + "/"));
+}
 
-gulp.task("nunjucks:stage", [
-    "nunjucks:stage:other"
-]);
-
-gulp.task("nunjucks:stage:other", function() {
+function nunjucksStage() {
     return gulp.src(["src/pages/**/*.+(html|njk)", "!src/pages/project.njk"])
-        .pipe(gulp.dest(nunjucksStage)); 
-});
-
-gulp.task("nunjucks:stage:projects", function() {
+        .pipe(gulp.dest(dir.nunjucks_stage));
+}
+//Not really used anymore
+function nunjucksStageProjects() {
     var projects = [
         "cartracker",
         "showreminder",
@@ -114,105 +96,97 @@ gulp.task("nunjucks:stage:projects", function() {
                 basename: project,
                 extname: ".njk"
             }))
-            .pipe(gulp.dest(nunjucksStage)));
+            .pipe(gulp.dest(dir.nunjucks_stage)));
     }
     return streams;
-});
+}
 
-gulp.task("stage:clean", function() {
-    return gulp.src(stage, { read: false }).pipe(gulpClean());
-});
+function nunjucks() {
+    return gulp.series(nunjucksStage, taskNunjucksRender);
+}
 
-gulp.task("dist:clean",
-    function() {
-        return gulp.src(dist, { read: false }).pipe(gulpClean());
-    });
+function stageClean() {
+    return del([dir.stage]);    
+}
 
-gulp.task('dist:css',
-    function() {
-        return gulp.src([
-            "src/css/**/*.css"
-        ]).pipe(gulp.dest(dist + "/css"));
-    });
+function distClean() {
+    return del([dir.dist]);    
+}
 
-gulp.task('dist:js',
-    function () {
-        return gulp.src([
-            "src/js/**/*.js"
-        ]).pipe(gulp.dest(dist + "/js"));
-    });
+function distCss() {
+    return gulp.src([
+        "src/css/**/*.css"
+    ]).pipe(gulp.dest(dir.dist + "/css"));
+}
 
-gulp.task('dist:img',
-    function () {
-        return gulp.src([
-            "src/img-fin/**/*.jpg",
-            "src/img-fin/**/*.png",
-            "src/img-fin/**/*.gif",
-            "src/img-fin/**/*.svg"
-        ]).pipe(gulp.dest(dist + "/img"));
-    });
+function distJs() {
+    return gulp.src([
+        "src/js/**/*.js"
+    ]).pipe(gulp.dest(dir.dist + "/js"));
+}
 
-gulp.task('dist:res',
-    function() {
-        return gulp.src([
-            "src/res/**/*"
-        ]).pipe(gulp.dest(dist + "/res"));
-    }
-);
+function distImg() {
+    return gulp.src([
+        "src/img-fin/**/*.jpg",
+        "src/img-fin/**/*.png",
+        "src/img-fin/**/*.gif",
+        "src/img-fin/**/*.svg"
+    ]).pipe(gulp.dest(dir.dist + "/img"));
+}
 
-gulp.task('dist:lib', ['restore'], 
-    function () {
-        return gulp.src([
-            "src/lib/**/*.*"
-        ]).pipe(gulp.dest(dist + "/lib"));
-    });
+function distRes() {
+    return gulp.src([
+        "src/res/**/*"
+    ]).pipe(gulp.dest(dir.dist + "/res"));
+}
 
-gulp.task("dist-local::copy-dist",
-    ["dist"],
-    function() {
-        return gulp.src(dist + "/**/*")
-            .pipe(gulp.dest(distLocal));
-    });
+function distLib() {
+    return gulp.src([
+        "src/lib/**/*.*"
+    ]).pipe(gulp.dest(dir.dist + "/lib"));
+}
 
-gulp.task("dist-local::replace-tokens", ["dist-local::copy-dist"],
-    function () {
-        console.log("replce tokens task has been called");
-        return gulp.src(distLocal + "/**/*.ptd")
-            .pipe(gulpClean())
-            .pipe(tokenReplacer(tokens))
-            .pipe(gulpRename(function(path) {
-                path.extname = path.extname.replace(".ptd", ""); // remove the ptd extension from the files
-            }))
-            .pipe(gulp.dest(distLocal));
-    });
-/*
-gulp.task("dist-local::clean-ptd-files", function() {
-    return del
-})*/
+function distMisc() {
+    return gulp.src([
+        "src/misc/pgp"
+    ]).pipe(gulp.dest(dir.dist ));
+}
 
-gulp.task('dist-local',
-    ['dist',
-    "dist-local::copy-dist",
-    "dist-local::replace-tokens"]
-);
+// depends on dist
+function distLocalCopyDist() {
+    return gulp.src(dir.dist + "/**/*")
+        .pipe(gulp.dest(dir.dist_local));
+}
 
-gulp.task("dist-local:clean",
-    function () {
-        return gulp.src(distLocal, { read: false }).pipe(gulpClean());
-    });
+// depends on distLocalCopyDist
+function distLocalReplaceTokens() {
+    return gulp.src(dir.dist_local + "/**/*.ptd") 
+        .pipe(tokenReplacer(tokens))
+        .pipe(gulpRename(function(path) {
+            path.extname = path.extname.replace(".ptd", ""); // remove the ptd extension from the files
+        }))
+        .pipe(gulp.dest(dir.dist_local));
+}
 
-gulp.task('dist', [
-    'dist:css',
-    'dist:js',
-    'dist:img',
-    'dist:res',
-    'nunjucks',
-    'dist:lib'//,
-    //'stage:clean'
-]);
+function dist() {
+    return gulp.parallel(distCss, distJs, distImg, distRes, distMisc, nunjucks(), distLib);
+}
 
-gulp.task("clean", [
-    "dist:clean",
-    "stage:clean",
-    "dist-local:clean"
-]);
+function distLocal() {
+    return gulp.series(dist(), distLocalCopyDist, distLocalReplaceTokens);
+}
+
+function distLocalClean() {
+    return del([dir.dist_local]);    
+}
+
+function clean() {
+    return gulp.parallel(distClean, stageClean, distLocalClean)
+}
+
+exports.nunjucks = nunjucks();
+exports.dist = dist();
+exports.distLocal = distLocal();
+exports.restore = gulp.parallel(restoreFontAwesome, restoreBulma, restoreVue);
+exports.clean = clean();
+
