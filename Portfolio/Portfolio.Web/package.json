@@ -21,7 +21,9 @@
     "vue": "2.6.10"
   },
   "scripts": {
-    "postinstall": "gulp restore"
+    "postinstall": "gulp restore",
+    "build": "gulp dist",
+    "clean": "gulp clean"
   },
   "repository": {}
 }
