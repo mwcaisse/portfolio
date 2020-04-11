@@ -1,0 +1,49 @@
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Logs and databases #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+# Credential Files #
+####################
+settings.json
+
+
+# Misc stuff #
+##############
+*.mf
+bin/
+gen/
+.prefs
+.settings/
+lint.xml
+.idea/
+.vs
+obj/
+*.user
+node_modules
+
+# VS Update FIles #
+###################
+Backup/
+UpgradeLog.htm
+

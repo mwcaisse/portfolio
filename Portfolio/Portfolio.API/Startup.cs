@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Portfolio.API
 {
@@ -12,7 +16,8 @@ namespace Portfolio.API
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("settings.json");
+                .AddJsonFile("settings.json", true)
+                .AddEnvironmentVariables(prefix: "PORTFOLIO_API_");
 
             Configuration = builder.Build();
         }

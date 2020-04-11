@@ -1,5 +1,4 @@
-﻿/// <binding AfterBuild='dist-local' Clean='clean' />
-/*
+﻿/*
 This file is the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. https://go.microsoft.com/fwlink/?LinkId=518007
 */
@@ -18,13 +17,12 @@ const dir = {
     libs: './src/lib/',
     dist: "./dist/",
     stage: "./dist-stage/",
-    dist_local: "./dist-local",
     nunjucks_stage: "./dist-stage/nunjucks/"
 };
 
 
 var tokens = {
-    api_root: "http://localhost:14262/",
+    api_root: "/api/",
     context_root: "/"
 };
 
@@ -152,41 +150,25 @@ function distMisc() {
     ]).pipe(gulp.dest(dir.dist ));
 }
 
-// depends on dist
-function distLocalCopyDist() {
-    return gulp.src(dir.dist + "/**/*")
-        .pipe(gulp.dest(dir.dist_local));
-}
-
-// depends on distLocalCopyDist
-function distLocalReplaceTokens() {
-    return gulp.src(dir.dist_local + "/**/*.ptd") 
+function distReplaceTokens() {
+    return gulp.src(dir.dist + "/**/*.ptd") 
         .pipe(tokenReplacer(tokens))
         .pipe(gulpRename(function(path) {
             path.extname = path.extname.replace(".ptd", ""); // remove the ptd extension from the files
         }))
-        .pipe(gulp.dest(dir.dist_local));
+        .pipe(gulp.dest(dir.dist));
 }
 
 function dist() {
-    return gulp.parallel(distCss, distJs, distImg, distRes, distMisc, nunjucks(), distLib);
-}
-
-function distLocal() {
-    return gulp.series(dist(), distLocalCopyDist, distLocalReplaceTokens);
-}
-
-function distLocalClean() {
-    return del([dir.dist_local]);    
+    return gulp.parallel(distCss, distJs, distImg, distRes, distMisc, nunjucks(), distLib, distReplaceTokens);
 }
 
 function clean() {
-    return gulp.parallel(distClean, stageClean, distLocalClean)
+    return gulp.parallel(distClean, stageClean)
 }
 
 exports.nunjucks = nunjucks();
 exports.dist = dist();
-exports.distLocal = distLocal();
 exports.restore = gulp.parallel(restoreFontAwesome, restoreBulma, restoreVue);
 exports.clean = clean();
 

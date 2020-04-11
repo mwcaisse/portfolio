@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Portfolio.API
 {
@@ -14,6 +15,13 @@ namespace Portfolio.API
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Console()
+                .CreateLogger();
+
+            Log.Information("WE ARE LOGGING");
+            
             CreateWebHostBuilder(args).Build().Run();
         }
 
