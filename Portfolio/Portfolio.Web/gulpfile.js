@@ -160,7 +160,10 @@ function distReplaceTokens() {
 }
 
 function dist() {
-    return gulp.parallel(distCss, distJs, distImg, distRes, distMisc, nunjucks(), distLib, distReplaceTokens);
+    return gulp.series(
+        gulp.parallel(distCss, distJs, distImg, distRes, distMisc, nunjucks(), distLib),
+        distReplaceTokens
+    );
 }
 
 function clean() {
