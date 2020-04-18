@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: portfolio-api
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: portfolio-api
+  template:
+    metadata:
+      labels:
+        app: portfolio-api
+    spec:
+      containers:
+        - name: portfolio-api
+          image: registry.gitlab.com/mwcaisse/application-images/portfolio-api:$IMAGE_TAG
+          ports:
+            - containerPort: 80
+          env:
+            - name: PORTFOLIO_API_SENDGRIDAPIKEY
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-api-secret
+                  key: sendgrid-api-key
+            - name: PORTFOLIO_API_FROMEMAILADDRESS
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-api-secret
+                  key: from-email-address
+            - name: PORTFOLIO_API_TOEMAILADDRESS
+              valueFrom:
+                secretKeyRef:
+                  name: portfolio-api-secret
+                  key: to-email-address
+      imagePullSecrets:
+        - name: regcred
