@@ -46,8 +46,11 @@ namespace Portfolio.API
             {
                 app.UseDeveloperExceptionPage();
             }
-          
-            app.UseMvc();
+
+            app.UseMiddleware<RequestLoggingMiddleware>();
+            app.UseRouting();
+            app.UseEndpoints(routes => { routes.MapControllers(); });
+            
         }
     }
 }
