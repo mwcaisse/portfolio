@@ -32,8 +32,8 @@ namespace Portfolio.API
             var applicationConfiguration = new ApplicationConfiguration()
             {
                 SendGridApiKey = Configuration.GetValue<string>("sendGridApiKey"),
-                FromEmailAddress = Configuration.GetValue<string>("fromEmailAddress"),
-                ToEmailAddress = Configuration.GetValue<string>("toEmailAddress")
+                FromEmailAddress = Configuration.GetValue<string>("fromEmailAddress").Trim(),
+                ToEmailAddress = Configuration.GetValue<string>("toEmailAddress").Trim()
             };
 
             services.AddSingleton(applicationConfiguration);
